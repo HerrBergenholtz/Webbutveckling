@@ -13,6 +13,10 @@ h1{
     color:rgb(186, 191, 229);
 }
 
+.hejsan{
+    border-width: 3px; border-style:solid; border-color:rgb(255, 131, 93);padding: 1em;
+}
+
 h2{
     color: rgb(186, 191, 229);
 }
@@ -31,4 +35,9 @@ h2{
 .teknikumimg{
     max-width: 40%;
     max-height: auto;
+}
+
+.link{
+    color:rgb(234, 234, 234);
+    text-decoration: none;
 }
