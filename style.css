@@ -27,16 +27,15 @@ h2{
 .it{
     color: rgb(234, 234, 234);
     text-align: center;
-    background-color:rgb(75, 75, 75);
+    background-color:rgb(63, 63, 63);
 }
 
 .it2{
-    color: rgb(255, 131, 93);
     text-align: right;
 }
 
 .teknikumimg{
-    max-width: 40%;
+    max-width: 31%;
     max-height: auto;
 }
 
@@ -46,6 +45,32 @@ h2{
 }
 
 .ne{
-    max-width: 90%;
+    max-width: 100%;
     max-height: auto;
+}
+
+.headerlink1{
+    text-decoration: none;
+    color: rgb(186, 191, 229);
+    font-size: 17px;
+}
+
+.hotdogg{
+    max-width: 4%;
+    max-height: auto;
+}
+
+h3{
+    color:rgb(153, 153, 153);
+    font-size: 16px;
+}
+
+.fottext{
+    font-size: 12px;
+}
+
+.fotlink{
+    text-decoration:none;
+    color: rgb(255, 131, 93);
+
 }
