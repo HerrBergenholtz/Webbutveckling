@@ -1,5 +1,7 @@
 body{
     background-color:rgb(41, 41, 41);
+    margin-top: 70px;
+    padding: 20px;
 }
 
 p{
@@ -9,8 +11,44 @@ p{
 h1{
     font-family: Arial;
     font-size: 22px;
-    text-align:center;
+    margin-left: 20px;
     color:rgb(186, 191, 229);
+}
+
+header{
+    background-color:rgb(63, 63, 63);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+header img{
+    max-width: 3%;
+    max-height: auto;
+    margin-left: 20px;
+}
+
+header *{
+    display: inline;
+}
+
+header li{
+    margin: 6px;
+}
+
+.headerlink1{
+    text-decoration: none;
+    color: rgb(186, 191, 229);
+    font-size: 17px;
+}
+
+.gitlink{
+    max-width: 3%;
+    max-height: auto;
 }
 
 .hejsan{
@@ -49,16 +87,6 @@ h2{
     max-height: auto;
 }
 
-.headerlink1{
-    text-decoration: none;
-    color: rgb(186, 191, 229);
-    font-size: 17px;
-}
-
-.hotdogg{
-    max-width: 4%;
-    max-height: auto;
-}
 
 h3{
     color:rgb(153, 153, 153);
