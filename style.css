@@ -12,6 +12,7 @@ h1{
     font-family: Arial;
     font-size: 22px;
     margin-left: 20px;
+    margin-right: -30px;
     color:rgb(186, 191, 229);
 }
 
@@ -56,6 +57,11 @@ header li{
     border-style:solid; 
     border-color:rgb(255, 131, 93);
     padding: 1em;
+}
+
+.partner{
+    text-decoration: none;
+    color:rgb(255, 131, 93);
 }
 
 h2{
