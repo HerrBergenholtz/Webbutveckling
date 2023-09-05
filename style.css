@@ -8,14 +8,6 @@ p{
     color:rgb(255, 131, 93);
 }
 
-h1{
-    font-family: Arial;
-    font-size: 22px;
-    margin-left: 20px;
-    margin-right: -30px;
-    color:rgb(186, 191, 229);
-}
-
 header{
     background-color:rgb(63, 63, 63);
     position: fixed;
@@ -39,6 +31,14 @@ header *{
 
 header li{
     margin: 6px;
+}
+
+h1{
+    font-family: Arial;
+    font-size: 22px;
+    margin-left: 20px;
+    margin-right: -30px;
+    color:rgb(186, 191, 229);
 }
 
 .headerlink1{
@@ -78,14 +78,14 @@ h2{
     text-align: right;
 }
 
-.teknikumimg{
-    max-width: 44%;
-    max-height: auto;
-}
-
 .link{
     color:rgb(234, 234, 234);
     text-decoration: none;
+}
+
+.teknikumimg{
+    max-width: 44%;
+    max-height: auto;
 }
 
 .ne{
