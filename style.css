@@ -9,6 +9,8 @@ p{
 }
 
 header{
+    grid-column: 1/ span 3;
+    grid-row: 1/2;
     background-color:#473624;
     position: fixed;
     top: 0;
@@ -52,6 +54,10 @@ h1{
     max-height: auto;
 }
 
+main{
+    grid-row: 4/7;
+}
+
 .hejsan{
     border-width: 3px;
     border-style:solid; 
@@ -91,6 +97,10 @@ h2{
 .ne{
     max-width: 100%;
     max-height: auto;
+}
+
+footer{
+    grid-row: 6/10;
 }
 
 
