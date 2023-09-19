@@ -3,19 +3,20 @@ body {
 	padding: 10px;
 }
 
-.container {
+.container{
 	display: grid;
 	grid-template-columns: 1fr 4fr 1.7fr;
-	grid-template-rows: 0.3fr 2fr 2fr 2fr 0.01fr;
+	grid-template-rows: 0.1fr 2fr 0.1fr;
 	grid-template-areas: 
 	"header header header"
-	"nav hejsan teknikumimg"
-	". it ne"
-	". it2 ."
+	"nav main main"
 	"footer footer footer";
 	grid-gap: 10px;
 }
 
+.main_container{
+	display: grid;
+}
 
 p {
 	color: #d3af86;
@@ -84,7 +85,7 @@ h1 {
 	padding: 1em;
 }
 
-.item_hejsan{
+.hejsan{
 	grid-area: hejsan;
 }
 
@@ -103,15 +104,16 @@ h2 {
 	background-color: #473624;
 }
 
-.item_it{
+.it{
 	grid-area: it;
 }
 
 .it2{
+	grid-area: it2;
 
 }
 
-.item_it2{
+.it2{
 	grid-area: it2;
 }
 
@@ -121,7 +123,7 @@ h2 {
 	 
 }
 
-.item_teknikumimg{
+.teknikumimg{
 	grid-area: teknikumimg;
 }
 
@@ -131,7 +133,7 @@ h2 {
 	 
 }
 
-.item_ne{
+.ne{
 	grid-area: ne;
 }
 
