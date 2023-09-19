@@ -9,13 +9,16 @@ body {
 	grid-template-rows: 0.1fr 2fr 0.1fr;
 	grid-template-areas: 
 	"header header header"
-	"nav main main"
+	"nav main ."
 	"footer footer footer";
 	grid-gap: 10px;
 }
 
 .main_container{
 	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas: ;
 }
 
 p {
