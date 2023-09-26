@@ -60,7 +60,7 @@
  .main_container {
  	display: grid;
  	grid-template-columns: 1fr;
- 	grid-template-rows: min-max-content 1fr 1fr 1fr 1fr 1fr;
+ 	grid-template-rows: minmax(1fr);
  	grid-gap: 5px;
  	padding: 10px;
  }
@@ -68,7 +68,7 @@
  h1 {
  	font-family: Arial;
  	font-size: 22px;
- 	color: rgb(186, 191, 229);
+ 	color: #babfe5;
  	margin-left: 50px;
  	margin-top: 17px;
  }
@@ -90,7 +90,7 @@
  h2 {
  	grid-row: 2/3;
  	grid-column: 1/1;
- 	color: rgb(186, 191, 229);
+ 	color: #babfe5;
  }
 
  .it {
@@ -103,7 +103,7 @@
  h3 {
  	grid-row: 4/5;
  	grid-column: 1/1;
- 	color: rgb(186, 191, 229);
+ 	color: #babfe5;
  }
 
  .it2 {
