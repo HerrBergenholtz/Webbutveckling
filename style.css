@@ -21,6 +21,7 @@
  header {
  	background-color: #473624;
  	grid-area: header;
+ 	padding: 5px;
  }
 
  header img {
@@ -31,6 +32,7 @@
 
  nav {
  	grid-area: nav;
+ 	color: #367031;
  }
 
  nav>ul {
@@ -49,7 +51,7 @@
  	border-width: 3px;
  	border-style: solid;
  	border-color: #367031;
- 	padding: 10px;
+ 	padding: 15px;
  }
 
  nav a {
@@ -59,9 +61,8 @@
 
  .main_container {
  	display: grid;
- 	grid-template-columns: 1fr;
- 	grid-template-rows: minmax(1fr);
- 	grid-gap: 5px;
+ 	grid-template-columns: auto;
+ 	grid-template-rows: auto;
  	padding: 10px;
  }
 
