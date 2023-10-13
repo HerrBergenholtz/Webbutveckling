@@ -5,17 +5,44 @@
         <title>UPPGIFT1</title>
         <meta charset="utf-8">
         <link href="style.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="https://i.kym-cdn.com/photos/images/newsfeed/002/492/561/011">
     </head> 
 
     <body>
         <div class="container">
             <header>
-                <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/492/561/011" alt="Räsergris">
+                <nav> <!--I min nav har jag alla element som har någon typ av navigerings funktion, alltså länkar.-->
+                <a href="index.html"><img src="https://i.kym-cdn.com/photos/images/newsfeed/002/492/561/011" alt="Min logga"></a><!--Här har jag min logga som är länkad till startsidan vilket är varför den ingår i <nav>-->
+                <ul> <!--Jag använder mig av en oordnad lista för att rada upp restev av alla navigerings element, jag använder mig av en oordnad lista eftersom att jag inte kommer använda mig av någon list style typ och inte kommer behöva numrera föremålen på listan-->
+                    <li><!--Detta är min list-items som har länkar till andra relevanta sidor-->
+                        <a href="#">Relevanta sidor</a> 
+                        <ul class="dropdown-meny"><!--Detta är ännu en oordnad lista inuti ett list element i den oordnade listan, alltså: nav ul li ul. Denna listan innehåller lite blandade sidor kopplade till mig men som inte är lika relevanta som mina två andra sidor så jag har samlat ihop dem i den här listan som kommer att gömmas tills någon hovrar över den med sin mus, då kommer man att kunna se listan och komma åt de andra länkarna i listan.-->
+                            <li>
+                                <a href="https://github.com/HerrBergenholtz" target="_blank">Github</a><!--Här har vi länkar till de mindre relevanta sidorna, jag har lagt till "target="_blank"" för att göra så att när man trycker på dem så kommer man att öppna länken i en ny flik istället för över sidan.-->
+                            </li>
 
-                <h1>Zacharias Bergenholtz</h1>
+                            <li>
+                                <a href="#">Annan sida</a>
+                            </li>
+
+                            <li>
+                                <a href="#">Ännu relevant</a>
+                            </li>
+                        </ul>
+                    </li><!--Här tar den gömda oordnade listan inuti list elementet inuti den oordnade listan slut och jag fortsätter den första oordnade listan med fler list-items-->
+
+                    <li>
+                        <a href="#">Min andra sida</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Min tredje sida</a>
+                    </li>
+                </ul>
+            </nav>
             </header> 
             
-            <nav> 
+            <!--<nav> 
                 <ul>
                     <li>
                         <a href="https://github.com/HerrBergenholtz/Webbutveckling">Github</a>
@@ -32,7 +59,7 @@
                         Annan sida
                     </li>
                 </ul>
-            </nav>
+            </nav>-->
             
             <main>
                 <div class="main_container">

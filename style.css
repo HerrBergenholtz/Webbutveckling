@@ -3,17 +3,18 @@
  	padding: 10px;
  }
 
- p {
+ * {
  	color: #d3af86;
+ 	text-decoration: none;
  }
 
  .container {
  	display: grid;
- 	grid-template-columns: 1fr 4fr 1.7fr;
+ 	grid-template-columns: 2fr 1fr;
  	grid-template-rows: 0.1fr 2fr 0.1fr;
  	grid-template-areas:
  		"header header header"
- 		"nav main bilder"
+ 		". main bilder"
  		"footer footer footer";
  	grid-gap: 10px;
  }
@@ -22,19 +23,60 @@
  	background-color: #473624;
  	grid-area: header;
  	padding: 5px;
+ 	height: 75px;
  }
 
  header img {
  	float: left;
- 	max-width: 40px;
+ 	max-width: 60px;
  	margin: 10px
  }
 
  nav {
- 	grid-area: nav;
+ 	/*grid-area: nav;*/
  	color: #367031;
  }
 
+ nav ul {
+ 	float: left;
+ }
+
+ nav ul li {
+ 	float: left;
+ 	position: relative;
+ 	list-style-type: none;
+ 	color: #367031;
+ }
+
+ nav ul li a {
+ 	display: block;
+ 	padding: 14px;
+ 	color: #367031;
+ }
+
+ .dropdown-meny {
+ 	display: none;
+ 	position: absolute;
+ 	background-color: bisque;
+ 	border-radius: 0px 0px 8px 8px;
+ 	width: 100px;
+ }
+
+ .dropdown-meny li {
+ 	text-align: center;
+ }
+
+ .dropdown-meny li a {
+ 	background-color: bisque;
+ 	color: #221a0f;
+
+ }
+
+ nav ul li:hover .dropdown-meny {
+ 	display: block;
+ }
+
+ /*
  nav>ul {
  	display: grid;
  	grid-template-rows: 1fr 1fr 1fr;
@@ -58,7 +100,7 @@
  	text-decoration: none;
  	color: #367031;
  }
-
+*/
  .main_container {
  	display: grid;
  	grid-template-columns: auto;
