@@ -1,4 +1,4 @@
- body {
+body {
  	background-color: #221a0f;
  	padding: 10px;
 	color: #d3af86;
@@ -14,25 +14,25 @@
 	"footer footer footer";
 	grid-gap: 10px;
 	height: 95vh;
- }
+}
 
- header {
+header {
  	background-color: #473624;
  	grid-area: header;
  	height: 75px;
- }
+}
 
- header img {
+header img {
  	float: left;
  	max-width: 60px;
  	margin: 10px
- }
+}
 
- nav {
+nav {
  	color: #367031;
- }
+}
 
- nav ul {
+nav ul {
  	float: left;
 }
 
@@ -48,29 +48,34 @@ nav ul li a {
 	padding: 14px;
 	color: #367031;
 	text-decoration: none;
- }
+}
 
- .dropdown-meny {
+.dropdown-meny {
  	display: none;
  	position: absolute;
  	background-color: bisque;
  	border-radius: 0px 0px 8px 8px;
  	width: 100px;
- }
+}
 
- .dropdown-meny li {
+.dropdown-meny li {
  	text-align: center;
- }
+}
 
- .dropdown-meny li a {
+.dropdown-meny li a {
  	background-color: bisque;
  	color: #221a0f;
+}
 
- }
+.dropdown-meny li a:hover {
+	background-color: rgb(255, 140, 0);
+	color: #221a0f;
 
- nav ul li:hover .dropdown-meny {
+}
+
+nav ul li:hover .dropdown-meny {
  	display: block;
- }
+}
 
  /*
  nav>ul {
@@ -97,145 +102,131 @@ nav ul li a {
  	color: #367031;
  }
 */
- .main_container {
+.main_container {
  	display: grid;
  	grid-template-columns: auto;
  	grid-template-rows: auto;
  	padding: 10px;
- }
+}
 
- table,
- th,
- td {
+table,
+th,
+td {
 	border-width: 1px;
 	border-style: solid;
- }
+}
 
- th,
- td {
+th,
+td {
 	padding: 15px;
- }
+}
 
- table {
+table {
 	border-collapse: collapse;
- }
+}
 
- th:nth-child(1) {
+th:nth-child(1) {
 	text-align: left;
- }
+}
 
- th:nth-child(3) {
+th:nth-child(3) {
 	text-align: right;
- }
+}
 
- td:nth-child(2) {
+td:nth-child(2) {
 	text-align: center;
- }
+}
 
- td:nth-child(3) {
+td:nth-child(3) {
 	text-align: right;
- }
+}
 
- tr:nth-child(even) {
+tr:nth-child(even) {
 	background-color: #2d2314;
- }
+}
 
- tr:nth-child(odd) {
+tr:nth-child(odd) {
 	background-color: #1a140c;
- }
+}
 
- tr:hover {
+tr:hover {
 	background-color: #362b1c;
- }
+}
 
- #gris {
-	display: none;
-	position: fixed;
- }
+button {
+	border: none;	background-color: inherit;	color: inherit;	font-size: inherit;	padding: 0;
+}
 
- button {
-	border: none;
-	background-color: inherit;
-	color: inherit;
-	font-size: inherit;
-	padding: 0;
- }
+.hejsan {
+	grid-row: 1/2;
+	grid-column: 1/1;
+	border-width: 3px;
+	border-style: solid;
+	border-color: #d3af86;
+	padding: 20px;
+}
 
- .hejsan {
- 	grid-row: 1/2;
- 	grid-column: 1/1;
- 	border-width: 3px;
- 	border-style: solid;
- 	border-color: #d3af86;
- 	padding: 20px;
- }
+.hejsan a {
+	text-decoration: none;
+	color: #d3af86;
+}
 
- .hejsan a {
- 	text-decoration: none;
- 	color: #d3af86;
- }
+h2 {
+	grid-row: 2/3;
+	grid-column: 1/1;
+	color: #babfe5;
+}
 
- h2 {
- 	grid-row: 2/3;
- 	grid-column: 1/1;
- 	color: #babfe5;
- }
+.it {
+	grid-row: 3/4;
+	grid-column: 1/1;
+	color: #f79a32;
+	background-color: #473624;
+}
 
- .it {
- 	grid-row: 3/4;
- 	grid-column: 1/1;
- 	color: #f79a32;
- 	background-color: #473624;
- }
+h3 {
+	grid-row: 4/5;
+	grid-column: 1/1;
+	color: #babfe5;
+}
 
- h3 {
- 	grid-row: 4/5;
- 	grid-column: 1/1;
- 	color: #babfe5;
- }
+.it2 {
+	grid-row: 5/6;
+	grid-column: 1/1;
+}
 
- .it2 {
- 	grid-row: 5/6;
- 	grid-column: 1/1;
- }
+aside {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 10px;
+	margin: 18px;
+	margin-top: 25px;
+}
 
- aside {
- 	display: grid;
- 	grid-template-columns: 1fr;
- 	grid-template-rows: 1fr 1fr;
- 	grid-gap: 10px;
- 	margin: 18px;
- 	margin-top: 25px;
- }
+.teknikumimg {
+	max-width: 100%;
+	padding-left: 17px;
+	grid-row: 1/2;
+	grid-column: 1/2;
+}
 
- #spel {
-	width: 100%;
-	float: right;
- }
+.ne {
+	max-width: 100%;
+	padding-left: 17px;
+	grid-row: 2/3;
+	grid-column: 1/2;
+}
 
- .teknikumimg {
- 	max-width: 100%;
- 	padding-left: 17px;
- 	grid-row: 1/2;
- 	grid-column: 1/2;
- }
+footer {
+	grid-area: footer;
+}
 
- .ne {
- 	max-width: 100%;
- 	padding-left: 17px;
- 	grid-row: 2/3;
- 	grid-column: 1/2;
- }
+h4 {
+	color: rgb(153, 153, 153);
+	font-size: 16px;
+}
 
- footer {
- 	grid-area: footer;
- }
-
- h4 {
- 	color: rgb(153, 153, 153);
- 	font-size: 16px;
- }
-
- .fottext {
- 	font-size: 12px;
- }
+.fottext {
+	font-size: 12px;
+}
