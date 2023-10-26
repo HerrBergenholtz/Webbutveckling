@@ -1,30 +1,30 @@
 body {
 	background-color: #221a0f;
-	padding: 10px;
 	color: #d3af86;
 }
 
 .container {
+	height: 99vh;
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	grid-template-rows: 0.1fr 2fr 0.1fr;
+	grid-template-rows: auto auto;
 	grid-template-areas:
-		"header header header"
-		". main bilder"
-		"footer footer footer";
+		"header header"
+		" main bilder"
+		"footer footer";
 	grid-gap: 10px;
-	height: 95vh;
 }
 
 header {
-	background-color: #473624;
 	grid-area: header;
+	margin: -8px;
+	background-color: #473624;
 	height: 75px;
 }
 
 header img {
 	float: left;
-	max-width: 60px;
+	max-width: 55px;
 	margin: 10px
 }
 
@@ -82,7 +82,12 @@ nav ul li:hover .dropdown-meny {
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: auto;
-	padding: 10px;
+	grid-template-areas: 
+		"hejsan"
+		"h2"
+		"it"
+		"h3"'
+		"it2";
 }
 
 table,
@@ -127,14 +132,6 @@ tr:nth-child(odd) {
 
 tr:hover {
 	background-color: #362b1c;
-}
-
-button {
-	border: none;
-	background-color: inherit;
-	color: inherit;
-	font-size: inherit;
-	padding: 0;
 }
 
 .hejsan {
@@ -201,7 +198,7 @@ aside {
 	bottom: 0;
 	background: rgba(0, 0, 0, 0.5);
 	color: inherit;
-	width: 100%;
+	width: 400px;
 	transition: .5s ease;
 	opacity: 0;
 	color: white;
