@@ -12,9 +12,11 @@
     <body><!--I body finns allt innehåll som användaren kommer att se-->
         <div class="container"><!--Detta är en div som innehåller allt innehåll i body, denna finns här för att skapa en grid som allt i webbsidan ingår i-->
             <header><!--Header är det element som finns längst upp på sidan, den innehåller min ikon samt som en global meny-->
-                <nav> <!--I min nav har jag alla element som har någon typ av navigerings funktion, alltså länkar-->
-                    <a href="index.html"><img src="https://i.kym-cdn.com/photos/images/newsfeed/002/492/561/011" alt="Min logga"></a><!--Här har jag min logga som är länkad till startsidan vilket är varför den ingår i <nav>-->
+                <nav><!--I min nav har jag alla element som har någon typ av navigerings funktion, alltså länkar-->
                     <ul> <!--Jag använder mig av en oordnad lista för att rada upp restev av alla navigerings element, jag använder mig av en oordnad lista eftersom att jag inte kommer använda mig av någon list style typ och inte kommer behöva numrera föremålen på listan-->
+                        <li>
+                            <a href="index.html"><img src="https://i.kym-cdn.com/photos/images/newsfeed/002/492/561/011" alt="Min logga"></a><!--Här har jag min logga som är länkad till startsidan vilket är varför den ingår i <nav>-->
+                        </li>
                         <li><!--Detta är min list-items som har länkar till andra relevanta sidor-->
                             <a href="#">Relevanta sidor</a> 
                             <ul class="dropdown-meny"><!--Detta är ännu en oordnad lista inuti ett list element i den oordnade listan, alltså: nav ul li ul. Denna listan innehåller lite blandade sidor kopplade till mig men som inte är lika relevanta som mina två andra sidor så jag har samlat ihop dem i den här listan som kommer att gömmas tills någon hovrar över den med sin mus, då kommer man att kunna se listan och komma åt de andra länkarna i listan-->
@@ -42,7 +44,8 @@
             <main><!--Detta är main -->
                 <div class="main_container">
                     <section>
-                        <p class="hejsan">
+                        <h1>Hej</h1>
+                        <p>
                             Hejsan! Mitt namn är Zacharias Bergenholtz, jag är 17 år och går på Teknikums teknikprogram med inriktningen IT.
                             Jag är född 2006 i Växjö och jag har bott här ända sedan dess. Jag har växt upp med min mamma och pappa och är ett ensambarn, nuförtiden så är mina föräldrar skillda.
                             På min fritid så tycker jag om att spela datorspel med mina kompisar och att vara med min partner. Jag tycker även om att vara i naturen väldigt mycket och har ett stort intresse för djur och natur, särskilt fåglar och <a href="https://media.discordapp.net/attachments/1016965737002319917/1148594214012203109/image.png"> ugglor</a>.
@@ -51,7 +54,7 @@
 
                     <section>
                         <h2>IT</h2>
-                        <p class="it">
+                        <p>
                             Jag går på IT som står för information och mediateknik, där kommer vi att lära oss om webbutveckling, programering och datorteknik.
                             Jag har valt IT eftersom att jag har ett generellt intresse av datorer och programering och jag har alltid tänkt välja IT när jag valde att gå teknisk.    
                         </p>
@@ -59,7 +62,7 @@
                         
                     <section>
                         <h3>Mina tankar</h3>
-                        <p class="it2"> 
+                        <p> 
                             Redan nu så tycker jag att det verkar som en väldigt intressant kurs med väldigt många möjlighter.
                             Jag är särskilt intresserad av webbutvecklingen eftersom att vi har kommit igång med det praktiska direkt och jag tycker att det är väldigt roligt. 
                             Min mamma har också en egen webbsida där hon säljer inredning vilket har gjort mig extra intresserad av att lära mig av just webbutveckling.
@@ -69,7 +72,7 @@
                     </section>
                 </div>
             </main>
-            
+
             <aside class="bilder">
                 <div class="overlay-container">
                     <img src="https://vaxjo.imagevault.app/publishedmedia/canc9ifhti8vt16s6uo7/Teknikum_exteri-rbild_sommar.jpg" class="teknikumimg"
