@@ -42,10 +42,10 @@
             </header><!--Här tar min van och header slut-->
 
             <main><!--Detta är main -->
-                <div class="main_container">
-                    <section>
-                        <h1>Hej</h1>
-                        <p>
+                <div class="main_container"><!--Detta är en div som finns till för att skapa ett grid i main.-->
+                    <section><!--Varje textstycke befinner sig inuti en section, detta gör det enkelt att skapa ett grid i main eftersom att man inte behöver deklarera grid arean för att få det att fungera. Sections placeras automatiskt in på rät plats i ett grid.-->
+                        <h1>Hej</h1><!--Detta är huvudrubriker på sidan, det finns h1 till h6 och de får endast användas en gång, jag använder mig endast av h1 till h4 i den här sidan.-->
+                        <p><!--Detta är paragrafer, textstycken som innehåller text om mig, textstycken visas alltid på en ny rad.-->
                             Hejsan! Mitt namn är Zacharias Bergenholtz, jag är 17 år och går på Teknikums teknikprogram med inriktningen IT.
                             Jag är född 2006 i Växjö och jag har bott här ända sedan dess. Jag har växt upp med min mamma och pappa och är ett ensambarn, nuförtiden så är mina föräldrar skillda.
                             På min fritid så tycker jag om att spela datorspel med mina kompisar och att vara med min partner. Jag tycker även om att vara i naturen väldigt mycket och har ett stort intresse för djur och natur, särskilt fåglar och <a href="https://media.discordapp.net/attachments/1016965737002319917/1148594214012203109/image.png"> ugglor</a>.
@@ -71,23 +71,21 @@
                         </p>
                     </section>
                 </div>
-            </main>
+            </main><!--Här slutar min main.-->
 
-            <aside class="bilder">
-                <div class="overlay-container">
-                    <img src="https://vaxjo.imagevault.app/publishedmedia/canc9ifhti8vt16s6uo7/Teknikum_exteri-rbild_sommar.jpg" class="teknikumimg"
-                    alt="En bild på teknikum tagen på en solig sommarkväll">
-                    <div class="overlay">Teknikum - min skola</div>
+            <aside><!--Aside är den del av en sida som befinner såg åt sidan av main, i detta fallet så har jag två bilder. Aside är ett html 5 element precis som header och main.-->
+                <div class="overlay-container"><!--Detta är en div som finns till för att jag ska kunna visa en text när en bild hovras över med musen. Diven behövs för att gruppera tillsammans bilden och texten så att de finns på samma ställe på sidan.-->
+                    <img src="https://vaxjo.imagevault.app/publishedmedia/canc9ifhti8vt16s6uo7/Teknikum_exteri-rbild_sommar.jpg" alt="En bild på teknikum tagen på en solig sommarkväll"><!--Självaste bilden som kommer visa texten när man hovrar över den. I img elementet ska det alltid finnas en "alt" det som finns i alt kommer att skrivas ut istället för bilden om bilden inte kan laddas in av någon anledning, det är också den text som kommer läsas upp av talsyntes.-->
+                    <div class="overlay">Teknikum - min skola</div><!--Detta är ännu en div, den innehåller den text som ska visas när bilden hovras, den finns i en div så att den lätt ska kunna avskiljas från resten av sidan.-->
                 </div>
-                <img class="ne" src="https://media.discordapp.net/attachments/1009427473362059275/1144599928740516013/Computer_chip_walking_to_Stayin_Alive_Higher_Quality.gif" 
-                alt="Ett gulligt NE555 chip som går på en breadboard, vart är den påväg?">
+                <img class="ne" src="https://media.discordapp.net/attachments/1009427473362059275/1144599928740516013/Computer_chip_walking_to_Stayin_Alive_Higher_Quality.gif" alt="Ett gulligt NE555 chip som går på en breadboard, vart är den påväg?"><!--Detta är en gif men man kan lägga in gifs precis som bilder.-->
             </aside>
 
-            <footer>
+            <footer><!--Detta är sidans footer, den kommer att finnas längst ner på sidan, den innehåller mitt namn samt mina kontaktuppgifter.-->
                 <h4>Min information</h4>
-                <p class="fottext"> 
+                <p> 
                     Zacharias Bergenholtz - TE22B
-                    <br>
+                    <br><!--br lägger till en line break, alltså så kommer denna texten visas på tre rader. Om man vill ha samma resultat kan man även ha tre p element men i detta fallet så är det smidigare att ha ett p element med 2 br i eftersom att texten är så kort.-->
                     Mobilnummer: 0725043747
                     <br>
                     Mail: zabe06001@utb.vaxjo.se
@@ -95,4 +93,4 @@
             </footer>
         </div>
     </body>
-</html>
+</html><!--Här slutar html dokumentet.-->

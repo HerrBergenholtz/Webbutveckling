@@ -7,10 +7,10 @@ body {
 	height: 97vh;
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	grid-template-rows: 1fr 8fr 1fr ;
+	grid-template-rows: 1fr 8fr 1fr;
 	grid-template-areas:
 		"header header"
-		" main bilder"
+		" main aside"
 		"footer footer";
 	grid-gap: 10px;
 }
@@ -55,7 +55,7 @@ nav ul li a {
 	display: none;
 	position: absolute;
 	background-color: bisque;
-	border-radius: 8-px 8px 8px 8px;
+	border-radius: 8px 8px 8px 8px;
 	width: 130px;
 }
 
@@ -74,7 +74,7 @@ nav ul li a {
 	padding-bottom: 0px;
 }
 
-.dropdown-meny li:nth-child(1){
+.dropdown-meny li:nth-child(1) {
 	padding-top: 0px;
 }
 
@@ -93,6 +93,12 @@ nav ul li:hover .dropdown-meny {
 	grid-template-columns: auto;
 	grid-template-rows: auto;
 	grid-gap: 30px;
+}
+
+caption {
+	padding: 10px;
+	font-size: 24px;
+	font-family: Arial, Helvetica, sans-serif
 }
 
 table,
@@ -119,11 +125,12 @@ th:nth-child(3) {
 	text-align: right;
 }
 
-td:nth-child(2) {
+td:nth-child(2),
+td:nth-child(3) {
 	text-align: center;
 }
 
-td:nth-child(3) {
+td:nth-child(4) {
 	text-align: right;
 }
 
@@ -187,7 +194,6 @@ aside img:nth-child(1) {
 	position: absolute;
 	bottom: 0;
 	background: rgba(0, 0, 0, 0.5);
-	color: inherit;
 	width: 400px;
 	transition: .5s ease;
 	opacity: 0;
@@ -216,6 +222,6 @@ h4 {
 	font-size: 16px;
 }
 
-.fottext {
+footer p {
 	font-size: 12px;
 }
