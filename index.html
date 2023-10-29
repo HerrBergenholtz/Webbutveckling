@@ -5,7 +5,7 @@
         <title>UPPGIFT1</title><!--Titeln som webbsidan kommer att ha, detta kommer att ses i hemsidans flik när den är öppen i en webbläsare och den är viktig för att det är titeln som sökmotorer använder för att bestämma hur relevant sidan är i användarens sökning-->
         <meta charset="utf-8"><!--UTF-8 är ett sätt att representera text i unicode (en sekvens av byte)-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Det behövs för att läsa av hur stor skärm användaren har. Detta finns till så att vi kan använda oss av relativa enheter som "vw"-->
-        <link href="style.css" rel="stylesheet"><!--En länk till våran CSS fil så att vi kan använda extern CSS-->
+        <link href="css/style.css" rel="stylesheet"><!--En länk till våran CSS fil så att vi kan använda extern CSS-->
         <link rel="icon" type="image/x-icon" href="https://i.kym-cdn.com/photos/images/newsfeed/002/492/561/011"><!--Detta är en länk till en bild som kommer användas som favicon till min hemsida-->
     </head> 
 
@@ -15,27 +15,27 @@
                 <nav><!--I min nav har jag alla element som har någon typ av navigerings funktion, alltså länkar-->
                     <ul> <!--Jag använder mig av en oordnad lista för att rada upp restev av alla navigerings element, jag använder mig av en oordnad lista eftersom att jag inte kommer använda mig av någon list style typ och inte kommer behöva numrera föremålen på listan-->
                         <li>
-                            <a href="index.html"><img src="https://i.kym-cdn.com/photos/images/newsfeed/002/492/561/011" alt="Min logga"></a><!--Här har jag min logga som är länkad till startsidan vilket är varför den ingår i <nav>-->
+                            <a href="../index.html"><img src="https://i.kym-cdn.com/photos/images/newsfeed/002/492/561/011" alt="Min logga"></a><!--Här har jag min logga som är länkad till startsidan vilket är varför den ingår i <nav>-->
+                        </li>
+                        <li>
+                            <a href="html\mina-intressen.html">Mina Intressen</a>
+                        </li>
+                        <li>
+                            <a href="#">Min tredje sida</a>
                         </li>
                         <li><!--Detta är min list-items som har länkar till andra relevanta sidor-->
                             <a href="#">Relevanta sidor</a> 
                             <ul class="dropdown-meny"><!--Detta är ännu en oordnad lista inuti ett list element i den oordnade listan, alltså: nav ul li ul. Denna listan innehåller lite blandade sidor kopplade till mig men som inte är lika relevanta som mina två andra sidor så jag har samlat ihop dem i den här listan som kommer att gömmas tills någon hovrar över den med sin mus, då kommer man att kunna se listan och komma åt de andra länkarna i listan-->
                                 <li>
-                                    <a href="https://github.com/HerrBergenholtz" target="blank">Github</a><!--Här har vi länkar till de mindre relevanta sidorna, jag har lagt till "target="_blank"" för att göra så att när man trycker på dem så kommer man att öppna länken i en ny flik istället för över sidan-->
+                                    <a href="https://github.com/HerrBergenholtz" target="_blank">Github</a><!--Här har vi länkar till de mindre relevanta sidorna, jag har lagt till "target="_blank"" för att göra så att när man trycker på dem så kommer man att öppna länken i en ny flik istället för över sidan-->
                                 </li>
                                 <li>
-                                    <a href="#">Annan</a>
+                                    <a href="https://eloquentjavascript.net" target="_blank">Favvo bok</a>
                                 </li>
                                 <li>
                                     <a href="#">Ännu</a>
                                 </li>
                             </ul><!--Här tar den gömda oordnade listan inuti list elementet inuti den oordnade listan slut och jag fortsätter den första oordnade listan med fler list-items-->
-                        </li>
-                        <li>
-                            <a href="mina-intressen.html">Mina Intressen</a>
-                        </li>
-                        <li>
-                            <a href="#">Min tredje sida</a>
                         </li>
                     </ul>
                 </nav>
@@ -48,7 +48,7 @@
                         <p><!--Detta är paragrafer, textstycken som innehåller text om mig, textstycken visas alltid på en ny rad.-->
                             Hejsan! Mitt namn är Zacharias Bergenholtz, jag är 17 år och går på Teknikums teknikprogram med inriktningen IT.
                             Jag är född 2006 i Växjö och jag har bott här ända sedan dess. Jag har växt upp med min mamma och pappa och är ett ensambarn, nuförtiden så är mina föräldrar skillda.
-                            På min fritid så tycker jag om att spela datorspel med mina kompisar och att vara med min partner. Jag tycker även om att vara i naturen väldigt mycket och har ett stort intresse för djur och natur, särskilt fåglar och <a href="https://media.discordapp.net/attachments/1016965737002319917/1148594214012203109/image.png" target="blank"> ugglor</a>.
+                            På min fritid så tycker jag om att spela datorspel med mina kompisar och att vara med min partner. Jag tycker även om att vara i naturen väldigt mycket och har ett stort intresse för djur och natur, särskilt fåglar och <a href="https://media.discordapp.net/attachments/1016965737002319917/1148594214012203109/image.png" target="_blank"> ugglor</a>.
                         </p>
                     </section>
 
