@@ -64,7 +64,7 @@ nav ul li a { /*Väljer alla anchor element inuti list elementen inuti den oordn
 	text-decoration: none; /*Tar bort all dekoration på texten, detta gör att länkarna inte kommer att vara understrukna som de vanligtvis är.*/
 }
 
-nav ul li:hover .dropdown-meny { /*Detta är en pseudoklass för när ett element hovras över*/
+nav ul li:hover .dropdown-meny { /*Detta är en pseudoklass som endast väljer elementet när det hovras över, och sedan, i detta fallet, väljer dropdown-menyn*/
 	display: block; /*När någon hovrar över list elementet som har dropdown-menyn som barn så kommer dropdown-menyn visas som block istället för none. Block betyder att elementet kommer att visas på en ny rad och kommer att ta upp all tillgänglig plats.*/
 }
 
@@ -98,7 +98,7 @@ nav ul li:hover .dropdown-meny { /*Detta är en pseudoklass för när ett elemen
 	padding-top: 0px;
 }
 
-.dropdown-meny li a:hover { /*Detta fungerar precis som den andra hover psuedoklassen som jag använde mig av fast i det här fallet så ändrar den bakgrundsfärgen på varje individuellt list element nät de hovras över.*/
+.dropdown-meny li a:hover { /*Detta fungerar precis som den andra hover psuedoklassen som jag använde mig av fast i det här fallet så ändrar den bakgrundsfärgen på varje individuellt list element när de hovras över.*/
 	background-color: #2a4228;
 }
 
@@ -118,59 +118,59 @@ main { /*Ger main grid-template-arean av main så att den visas på rätt ställ
 caption {
 	padding: 10px;
 	font-size: 24px;
-	font-family: Arial, Helvetica, sans-serif
-}
-
-table {
-	border-collapse: collapse;
+	font-family: Arial, Helvetica, sans-serif /*Ändrar typsnittet på min caption*/
 }
 
 table,
 th,
-td {
-	border-width: 1px;
-	border-style: solid;
+td { /*Med en gruppselektor (en gruppselektor gör så att man kan välja flera element som man vill ska ha samma regler genom att skriva ett komma "," mellan varje element som man vill inkludera) så väljer jag table, th och td, detta gör jag för att jag vill att hela listan ska ha en border runt sig och, sedan vill jag också att varje cell ska ha en egen border så då väljer jag td-cellerna samt th-cellerna.*/
+	border-width: 3px; /*Kommer göra så att bordern är 3px bred*/
+	border-style: solid; /*Stilen på min border, i detta fallet solid, vilket gör så att den blir ett rakt sträck*/
+}
+
+table { 
+	border-collapse: collapse; /*Eftersom att vi har gett alla celler samt listan egna borders så kommer det att finnas border som ligger jämte varandra så jag gör så att alla borders som är jämte varandra slås samman till en så att det inte ligger flera border jämte varandra.*/
 }
 
 th,
-td {
+td { /*Ger alla celler en padding*/
 	padding: 15px;
 }
 
-th:nth-child(1) {
+th:nth-child(1) { /*Med en strukturell pseudoklas gör jag så att det första th elementet kommer kommer ha texten justerad till vänster.*/
 	text-align: left;
 }
 
-th:nth-child(3) {
+th:nth-child(3) { /*Deklarerar att det sista th elementet kommer att texten justerad till höger.*/
 	text-align: right;
 }
 
 td:nth-child(2),
-td:nth-child(3) {
+td:nth-child(3) { /*Här använder jag två struktuella pseudoklasser med en gruppselektor för att välja de två kolumnerna av td element som befinner sig i mitten av listan (nth:child(2 & 3)) och centrerar deras text*/
 	text-align: center;
 }
 
-td:nth-child(4) {
+td:nth-child(4) { /*Gör så att den fjärde kolumnen av td element får deras text justerad åt höger.*/
 	text-align: right;
 }
 
-tr:nth-child(even) {
+tr:nth-child(even) { /*Detta är en strukturell psuedoklass som de föregående fast i detta fallet så väljer de alla jämna element och ändrar bakgrundsfärgen, detta används för att göra så kallad zebra-striping på en tabell (att varannan rad har olika färg)*/
 	background-color: #2d2314;
 }
 
-tr:nth-child(odd) {
+tr:nth-child(odd) { /*Detta är som föregående deklaration fast de udda list raderna väljs och ger dem en annan färg.*/
 	background-color: #1a140c;
 }
 
-tr:hover {
+tr:hover { /*Ändrar bakgrundsfärg på hela raden när den hovras över.*/
 	background-color: #362b1c;
 }
 
-td:hover, th:hover {
+td:hover, th:hover { /*Denna deklaration gör så att alla celler får en egen ny bakgrundsfärg när de individuellt hovras över.*/
 	background-color: #52432e;
 }
 
-main a {
+main a { /*Gör så att alla länkar ser ut som vanlig text genom att göra så att de ärver text färg och tar bort text dekoration.*/
 	text-decoration: none;
 	color: inherit;
 }
@@ -178,38 +178,39 @@ main a {
 h1,
 h2,
 h3,
-h4 {
+h4 { /*Denna långa gruppselektor väljer alla h element som jag använder mig av i mina sidor och ger dem en egen färg och textstorlek.*/
 	color: #babfe5;
+	font-size: 26px;
 }
 
-main section:nth-child(1) {
+main section:nth-child(1) { /*Väljer den första sektionen inom main och ger den en border */
 	border-width: 3px;
-	border-style: solid;
+	border-style: solid; 
 	border-color: #d3af86;
 	padding: 20px;
 }
 
-main section:nth-child(2) {
+main section:nth-child(2) { /*Ändrar textfärg och storlek på den andra sektionen*/
 	color: #f79a32;
 	background-color: #473624;
 	padding: 10px;
 }
 
-aside {
-	grid-area: aside;
-	display: grid;
-	grid-template-rows: min-content;
+aside { /*Väljer elementet aside*/
+	grid-area: aside; /*Ger den sin plats inom container-grid-systemet*/
+	display: grid; /*Visar aside som ett grid system*/
+	grid-template-rows: min-content; /*Gör så att raderna kommer vara så små som möjligt (beroende på storleken av innehållet)*/
 	grid-gap: 70px;
 	margin: auto;
 	margin-top: 25px;
 }
 
-.aside-2 {
+.aside-2 { /*Detta väljer min andra aside som jag använder i fin-sida.html och ger den rätt grid-area. Man behöver använda sig av en klass i det här fallet för att kunna ge den här deklarationen hög nog specificitet för att inte bli överskriden av den vanliga aside deklarationen ovan.*/
 	grid-area: aside-2;
 }
 
-.aside-2 img {
-	transform: scaleX(-1);
+.aside-2 img { /*Bilder i aside-2*/
+	transform: scaleX(-1); /*Transform används för att transformera bilder på olika sätt, i det här fallet så vill vi ändra på bildens x-skala. Detta gör vi med hjälp av scaleX() metoden. Vi kommer alltså ändra på storleken på bilden vågrätt, 1 är vanligt, om man ökar skalan så kommer bilden att bli bredare, om man går ner till 0 så kommer bilden inte vara synlig och om man sedan går ner till negativa värden så kommer bilden att vara spegelvänd vilket är det som vi är ute efter, så vi sätter värdet till -1 för att göra så att bliden har vanlig storlek men är spegelvänd.*/
 }
 
 .overlay-container {
@@ -238,14 +239,14 @@ aside img {
 	opacity: 1;
 }
 
-footer {
+footer { /*Ger footer rätt placering i griden*/
 	grid-area: footer;
 }
 
-h4 {
+h4 { /*Ger rubriken i footern en mindre storlek*/
 	font-size: 16px;
 }
 
-footer p {
+footer p { /*Ger texten i footer en mindre storlek*/
 	font-size: 12px;
 }
