@@ -36,7 +36,7 @@ header { /*En typselektor som väljer min header.*/
 
 header img { /*Detta är en avkomlingsselektor, denna väljer alla bilder som är barn eller barn barn (osv) av header*/
 	width: 60px; /*Sätter den maximala bredden på bilden*/
-	margin-top: -20px; /*Tar bort margin på övre sidan av bilden för att ge den en mer lämplig position i header.*/
+	margin-top: -20px; /*Tar bort margin på övre sidan av bilden för att ge den en mer lämplig position i header. Man kan välja att lägga till eller ta bort margin över, under, och åt vänster och höger med respektive, margin-top/bottum/left/right.*/
 }
 
 nav { /*Väljer min nav med en typselektor*/
@@ -48,71 +48,71 @@ nav ul { /*Väljer den oordnade listan inuti min nav*/
 	display: grid; /*Gör så att oordnade listan visas som ett grid, detta för att undvika att använda floats och göra det på ett mer responsivt sätt.*/
 	grid-template-columns: 100px 250px 250px 250px; /*Deklarerar storlek och mängd kolumner fast i detta fallet så använder jag mig av px istället för fr. Man behöver inte deklarera grid-template-rows eftersom att det bara finns en rad.*/
 	padding-inline-start: 10px; /*Detta är padding som kommer finnas där listan börjar, alltså till vänster om listan.*/
-	margin-top: 6px; /*Lägger till lite margin så att listan sitter på en bra höjd.*/
 }
 
 nav ul li { /*Väljer alla li element inuti den oordnade listan inuti min nav*/
 	margin-left: auto; 
 	margin-right: auto; /*Jag deklarerar margin till vänster och höger till auto vilket gör så att alla list element kommer vara centrerade inuti sina grids */
 	padding: 10px; /*Ger list elementen padding. Padding är inte som margin, istället för att det är utamför självaste elementet så är detta innaför elementet, vilket gör att man kan göra så att det är mer rymligt mellan element utan att flytta runt på elementen med margin, alla element håller sig i sin ruta.*/
-	list-style-type: none;
+	list-style-type: none; /*Den här regeln ändrar list stilen till ingen, vanligtvis så har oordnade listor punkter framför varje list element men i detta fallet vill vi inte att de ska synas vilket är varför vi deklarerar denna regel.*/
 	color: #367031;
 }
 
-nav ul li a {
-	display: block;
+nav ul li a { /*Väljer alla anchor element inuti list elementen inuti den oordnade listan inuti naven.*/
 	padding: 14px;
-	color: #367031;
-	text-decoration: none;
+	color: inherit; /*Gör så att färgen på texten kommer att vara den som den får i arv (alltså grön från list elementen) istället för den blåa färgen som länkar får vanligtvis.*/
+	text-decoration: none; /*Tar bort all dekoration på texten, detta gör att länkarna inte kommer att vara understrukna som de vanligtvis är.*/
 }
 
-.dropdown-meny {
-	margin-left: -40px;
-	display: none;
-	position: absolute;
+nav ul li:hover .dropdown-meny { /*Detta är en pseudoklass för när ett element hovras över*/
+	display: block; /*När någon hovrar över list elementet som har dropdown-menyn som barn så kommer dropdown-menyn visas som block istället för none. Block betyder att elementet kommer att visas på en ny rad och kommer att ta upp all tillgänglig plats.*/
+}
+
+.dropdown-meny { /*En klassselektor som väljer en klass som jag har givit min oordnade lista inuti ett listelement inuti min oordnade lista inuti min nav, jag har valt att ge den en klass för att göra det lättare att läsa och skriva eftersom att man annars måste ha väldigt långa avkmlingsselektorer.*/
+	margin: 20px 0px 0px -40px; /*Gör så att margin-top blir 20px och margin-left blir -40px. Om man ska skriva ut flera olika margins åt olika håll så är det smidigare att skriva ut fyra värden i margin då varje värde korresponderar till ett av riktningarna. Det första värdet är top, det andra värdet är right, det tredje värdet är bottum och det fjärde värdet är left.*/
+	display: none; /*Deklarerar att dropdown-menyn inte kommer att visas.*/
+	position: absolute; /*Absolut positionering används för att menyn ska visas relativt till förälder elementet vilket i detta fallet är list elementet som har den oordnade listan som är dropdown meny som barn, det används också för att göra så att listan inte tar plats på självaste bodyn utan finns ovanpå bodyn.*/
 	background-color: bisque;
-	border-radius: 0px 0px 8px 8px;
-	width: 200px;
+	border-radius: 0px 0px 15px 15px; /*Border radius är den radie som alla hörn på bordern har som jag anger med pixlar. Om man skriver ut fyra värden så som jag har gjort här så korresponderar det till alla fyra hörnen av bordern som elementet har. Det första värdet är hörnet uppe till vänster, det andra är uppe till höger, det tredje är nere till höger och det fjärde är nere till vänster. Detta har jag gjort för att jag bara vill att de nedre hörnen ska vara rundade.*/
+	width: 200px; /*Bestämmer bredden på menyn*/
 }
 
-.dropdown-meny li {
+.dropdown-meny li { /*List elementen inuti menyn*/
 	margin-left: 16px;
-	text-align: center;
+	text-align: center; /*Gör så att texten blir centrerad.*/
 	width: 140px;
 }
 
-.dropdown-meny li a {
+.dropdown-meny li a { /*Anchor elementen inuti listelementen inuti dropdown-menyn*/
 	background-color: bisque;
-	color: #221a0f;
+	font-size: 1.3rem; /*Denna reglen sätter textextstorleken till 1.3rem, rem är en relativ enhet som förhåller säg till rot elementet, i det här fallet så vill jag att texten ska vara lite större än i rot elementet. */
 	padding: 20px;
+	display: block; /*Display block gör så att varje anchor kommer visas på en ny rad och ta upp så stort område som det kan, i detta fallet så kommer den att flylla listelementet med anchor taggen.*/
 }
 
-.dropdown-meny li:last-child {
+.dropdown-meny li:last-child { /*Detta är en strukturell psuedoklass, den kommer att välja det li element som är det sista barnet inom dropdown meny. I det här fallet så använder jag det för att göra så att det sista list elementet inte har någon padding under sig.*/
 	padding-bottom: 0px;
 }
 
-.dropdown-meny li:nth-child(1) {
+.dropdown-meny li:first-child { /*Här gör jag så att det första listelementet inte har någon padding över sig.*/
 	padding-top: 0px;
 }
 
-.dropdown-meny li a:hover {
-	background-color: #FF8C00;
+.dropdown-meny li a:hover { /*Detta fungerar precis som den andra hover psuedoklassen som jag använde mig av fast i det här fallet så ändrar den bakgrundsfärgen på varje individuellt list element nät de hovras över.*/
+	background-color: #2a4228;
 }
 
-nav ul li:hover .dropdown-meny {
-	display: block;
-}
 
-main {
+main { /*Ger main grid-template-arean av main så att den visas på rätt ställe i min grid layout.*/
 	grid-template-areas: main;
 }
 
-.main-container {
-	padding: 20px;
+.main-container { /*Ger main-containern en grid layout*/
 	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto;
+	grid-template-columns: auto; 
+	grid-template-rows: auto; /*När vi använder oss av sections i HTLM dokumentet så behöver vi inte deklarera templates med värden utan det räcker att skriva "auto" och så kommer det att skapas en lämplig grid layout med en sektion i varje ruta.*/
 	grid-gap: 30px;
+	padding: 20px;
 }
 
 caption {
