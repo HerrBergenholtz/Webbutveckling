@@ -1,17 +1,17 @@
-body { /*Selektorn body kommer välja allt som användaren ser*/
+body { /*Vi använder oss av en typselektor för att välja body vilkte kommer att påverka allt som användaren ser eftersom att allt ligger inut body*/
 	background-color: #221a0f; /*Ändrar bakgrundsfärgen till mörkbrun*/
 	color: #d3af86; /*Bestämmer färgen på all text på sidan*/
 }
 
 .container { /*Detta är en klasselektor som väljer "container", vilket är den div som omsluter allt inuti body. Detta finns till för att lägga till ett grid till bodyn.*/
 	display: grid; /*Deklarerar display till grid. Grid är ett rutnätssystem som är uppbyggt av rader och kolumner där rader är horisontella och kolumner är vertikala.*/
-	grid-template-columns: 2fr 1fr; /*Detta deklarerar hur stora och hur många kolumner man vill ha, jag använder mig av enheten fr(fractions), det är en relativ måttenhet så skillnaden i storlek mellan kolumnerna kommer vara samma oberoende av skärmstorlek. I detta fallet så har jag två kolumner där den första är dubbelt så stor som den andra.*/
-	grid-template-rows: 1fr 8fr 1fr; /*Deklarerar hur många pch hur stora raderna ska vara.*/
-	grid-template-areas: /*Detta är ett simpelt sätt att göra så att rätt element hamnar på rätt ställe i grid, för att deklarera den första raden så skriver man, inom citationstecken, ett namn och sedan ett mellanrum (detta deklarerar den första kolumnen i raden) och sedan ett till namn för nästa kolumnn i raden och så vidare. När man ska deklarera nästa rad så avslutar man citationstecknen och hoppar ner en rad och gör samma sak.*/
+	grid-template-columns: 2fr 1fr; /*Detta deklarerar hur stora och hur många kolumner man vill ha, jag använder mig av enheten fr (fractions), det är en relativ måttenhet så skillnaden i storlek mellan kolumnerna kommer vara samma oberoende av skärmstorlek. I detta fallet så har jag två kolumner där den första är dubbelt så stor som den andra.*/
+	grid-template-rows: 1fr 8fr 1fr; /*Deklarerar hur många och hur stora raderna ska vara på samma sätt som kolumner deklareras.*/
+	grid-template-areas: /*Detta är ett simpelt sätt att göra så att rätt element hamnar på rätt ställe i sin grid, för att deklarera den första raden så skriver man, inom citationstecken, ett namn och sedan ett mellanrum (detta deklarerar den första kolumnen i raden) och sedan ett till namn för nästa kolumnn i raden och så vidare. När man ska deklarera nästa rad så avslutar man citationstecknen och hoppar ner en rad och gör samma sak.*/
 	"header header" /*Den första raden vill jag att headern helt ska ta upp så jag skriver header två gånger så att den tar upp hela raden*/ 
 	"main aside" /*I den andra raden så vill jag att main och aside ska vara jämte varandra.*/
 	"footer footer"; /*Till sist så deklarer jag att footer ska ta upp hela den sista raden.*/
-	grid-gap: 10px; /*Dett gör så att det är ett 10 pixlars mellanrum mellan alla grid-items med enheten px(som står för pixlar).*/
+	grid-gap: 10px; /*Dett gör så att det är ett 10 pixlars mellanrum mellan alla grid-items med enheten px (som står för pixlar).*/
 	height: 97vh; /*Sätter höjden på container och därför hela sidan till 97vh, vilket är en relativ enhet som står för view-height, det kommer göra så att sidan alltid kommer ta upp nästintill hela skärmen (100vh är hela skärmen) detta gör jag för att jag vill att min footer ska vara längst ner på sidan oavsett skärmstorlek.*/
 }
 
@@ -21,20 +21,20 @@ body { /*Selektorn body kommer välja allt som användaren ser*/
 	grid-template-rows: 1fr 8fr 1fr;
 	grid-template-areas: 
 	"header header header"
-	"aside main aside-2" /*Den enda skillnaden är att jag har en till aside som jag har gett namnet aside-2 så att jag ska kunna placera den i mitt grid korrekt.*/
+	"aside main aside-2" /*Den enda skillnaden är att jag har en till kolumn med en till aside som jag har gett namnet aside-2 så att jag ska kunna placera den i mitt grid korrekt.*/
 	"footer footer footer";
 	height: 97vh;
 	grid-gap: 10px;
 }
 
 header { /*En typselektor som väljer min header.*/
-	grid-area: header; /*Detta gör så att min header kommer placeras in i grid-arean för header, man deklarerar alltså det det element som man vill sätta in i ett grid med det grid-area namnet som man använder sig av i grid-template-areas i containern.*/
-	margin: -8px; /*Tar bort all margin runt headern så att den är i toppen av skärmen utan något mellanrum ovanför eller vid sidan. Margin är det mellanrum som är utanför runt elementet.*/
+	grid-area: header; /*Detta gör så att min header kommer placeras in i grid-arean för header, man deklarerar alltså det element som man vill sätta in i ett grid med det grid-area och sedan namnet som man använder sig av i grid-template-areas i containern.*/
+	margin: -8px; /*Tar bort all margin runt headern så att den är i toppen av skärmen utan något mellanrum ovanför eller vid sidan. Margin är det mellanrum som är utanför elementet som omsluter det.*/
 	background-color: #473624; /*Ger header en annan bakgrundsfärg så att det ska bli tydligare att det är headern.*/
 	height: 80px; /*Ger den en lämplig höjd*/
 }
 
-header img { /*Detta är en avkomlingsselektor, denna väljer alla bilder som är barn eller barn barn (osv) av header*/
+header img { /*Detta är en avkomlingsselektor, i detta fallet så väljer alla bilder som är barn eller barn barn (osv) av header*/
 	width: 60px; /*Sätter den maximala bredden på bilden*/
 	margin-top: -20px; /*Tar bort margin på övre sidan av bilden för att ge den en mer lämplig position i header. Man kan välja att lägga till eller ta bort margin över, under, och åt vänster och höger med respektive, margin-top/bottum/left/right.*/
 }
@@ -44,6 +44,18 @@ nav { /*Väljer min nav med en typselektor*/
 	font-size: 18px; /*Ändrar på storleken på texten inom nav.*/
 }
 
+nav a[href^="https"] { /*Här använder jag mig av en avkomlingsselektor för att välja alla anchor element inuti nav och sedan en attributselektor för att välja alla anchor tags som har en href som börjar på https. Detta kommer alltså välja alla anchor tags inom nav som leder till en extern sida.*/
+	color: rebeccapurple; /*Jag ändrar färgen på de externa länkarna så att man kan se skillnad på dem.*/
+}
+
+nav a:visited { /*Här använder jag mig återigen av en avkomlingsselektor för att välja alla anchor element inuti nav fast endast när de har blivit besökta, detta gör jag genom att använda mig av en pseudoklass*/
+	color: #468e3f; /*Ändrar färger på texten till en lite ljusare så att användaren ser att de har besökt den länken.*/
+}
+
+nav a[href^="https"]:visited { /*Här använder jag mig av en avkomlingsselektor och attributselektor som förut fast jag har också lagt till pseudoklassselektorn för att välja de externa länkarna när de har blivit besökta.*/
+	color: #8951c2; /*Ändrar färgen på texten till lite ljusare så som jag gjorde med de andra länkarna också.*/
+}
+
 nav ul { /*Väljer den oordnade listan inuti min nav*/
 	display: grid; /*Gör så att oordnade listan visas som ett grid, detta för att undvika att använda floats och göra det på ett mer responsivt sätt.*/
 	grid-template-columns: 100px 250px 250px 250px; /*Deklarerar storlek och mängd kolumner fast i detta fallet så använder jag mig av px istället för fr. Man behöver inte deklarera grid-template-rows eftersom att det bara finns en rad.*/
@@ -51,16 +63,15 @@ nav ul { /*Väljer den oordnade listan inuti min nav*/
 }
 
 nav ul li { /*Väljer alla li element inuti den oordnade listan inuti min nav*/
-	margin-left: auto; 
-	margin-right: auto; /*Jag deklarerar margin till vänster och höger till auto vilket gör så att alla list element kommer vara centrerade inuti sina grids */
-	padding: 10px; /*Ger list elementen padding. Padding är inte som margin, istället för att det är utamför självaste elementet så är detta innaför elementet, vilket gör att man kan göra så att det är mer rymligt mellan element utan att flytta runt på elementen med margin, alla element håller sig i sin ruta.*/
+	margin-left: auto;
+	margin-right: auto; /*Jag deklarerar margin till vänster och höger till auto vilket gör så att alla list element kommer vara centrerade inuti sina grids, om jag skulle deklarera margin till auto åt alla håll så skulle det läggas till margin över och under vilket jag inte vill ha.*/
+	padding: 10px; /*Ger list elementen padding. Padding är inte som margin, istället för att det är utanför självaste elementet så är detta innaför elementet, vilket gör att man kan göra så att det är mer rymligt mellan element utan att flytta runt på elementen med margin, alla element håller sig i sin ruta.*/
 	list-style-type: none; /*Den här regeln ändrar list stilen till ingen, vanligtvis så har oordnade listor punkter framför varje list element men i detta fallet vill vi inte att de ska synas vilket är varför vi deklarerar denna regel.*/
-	color: #367031;
 }
 
 nav ul li a { /*Väljer alla anchor element inuti list elementen inuti den oordnade listan inuti naven.*/
 	padding: 14px;
-	color: inherit; /*Gör så att färgen på texten kommer att vara den som den får i arv (alltså grön från list elementen) istället för den blåa färgen som länkar får vanligtvis.*/
+	color: #367031;
 	text-decoration: none; /*Tar bort all dekoration på texten, detta gör att länkarna inte kommer att vara understrukna som de vanligtvis är.*/
 }
 
@@ -69,11 +80,13 @@ nav ul li:hover .dropdown-meny { /*Detta är en pseudoklass som endast väljer e
 }
 
 .dropdown-meny { /*En klassselektor som väljer en klass som jag har givit min oordnade lista inuti ett listelement inuti min oordnade lista inuti min nav, jag har valt att ge den en klass för att göra det lättare att läsa och skriva eftersom att man annars måste ha väldigt långa avkmlingsselektorer.*/
-	margin: 20px 0px 0px -40px; /*Gör så att margin-top blir 20px och margin-left blir -40px. Om man ska skriva ut flera olika margins åt olika håll så är det smidigare att skriva ut fyra värden i margin då varje värde korresponderar till ett av riktningarna. Det första värdet är top, det andra värdet är right, det tredje värdet är bottum och det fjärde värdet är left.*/
+	margin-top: 20px;
+	margin-left: -40px;
 	display: none; /*Deklarerar att dropdown-menyn inte kommer att visas.*/
 	position: absolute; /*Absolut positionering används för att menyn ska visas relativt till förälder elementet vilket i detta fallet är list elementet som har den oordnade listan som är dropdown meny som barn, det används också för att göra så att listan inte tar plats på självaste bodyn utan finns ovanpå bodyn.*/
 	background-color: bisque;
-	border-radius: 0px 0px 15px 15px; /*Border radius är den radie som alla hörn på bordern har som jag anger med pixlar. Om man skriver ut fyra värden så som jag har gjort här så korresponderar det till alla fyra hörnen av bordern som elementet har. Det första värdet är hörnet uppe till vänster, det andra är uppe till höger, det tredje är nere till höger och det fjärde är nere till vänster. Detta har jag gjort för att jag bara vill att de nedre hörnen ska vara rundade.*/
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px; /*Border radius är den radie som alla hörn på bordern har som jag anger med pixlar.*/
 	width: 200px; /*Bestämmer bredden på menyn*/
 }
 
@@ -99,12 +112,12 @@ nav ul li:hover .dropdown-meny { /*Detta är en pseudoklass som endast väljer e
 }
 
 .dropdown-meny li a:hover { /*Detta fungerar precis som den andra hover psuedoklassen som jag använde mig av fast i det här fallet så ändrar den bakgrundsfärgen på varje individuellt list element när de hovras över.*/
-	background-color: #2a4228;
+	background-color: #122311;
 }
 
 
 main { /*Ger main grid-template-arean av main så att den visas på rätt ställe i min grid layout.*/
-	grid-template-areas: main;
+	grid-area: main;
 }
 
 .main-container { /*Ger main-containern en grid layout*/
@@ -172,7 +185,7 @@ td:hover, th:hover { /*Denna deklaration gör så att alla celler får en egen n
 
 main a { /*Gör så att alla länkar ser ut som vanlig text genom att göra så att de ärver text färg och tar bort text dekoration.*/
 	text-decoration: none;
-	color: inherit;
+	color: inherit; /*Gör så att anchor elementens text kommer att ärva textfärg från föräldraelementet vilket i detta fallet är p-elementet*/
 }
 
 h1,
@@ -180,7 +193,11 @@ h2,
 h3,
 h4 { /*Denna långa gruppselektor väljer alla h element som jag använder mig av i mina sidor och ger dem en egen färg och textstorlek.*/
 	color: #babfe5;
-	font-size: 26px;
+}
+
+.container-fin-sida h1 { 
+	text-align: center;
+	font-size: 30px;
 }
 
 main section:nth-child(1) { /*Väljer den första sektionen inom main och ger den en border */
@@ -205,6 +222,10 @@ aside { /*Väljer elementet aside*/
 	margin-top: 25px;
 }
 
+aside img { /*Ger de bilder som finns inuti aside en storlek.*/
+	max-width: 400px;
+}
+
 .aside-2 { /*Detta väljer min andra aside som jag använder i fin-sida.html och ger den rätt grid-area. Man behöver använda sig av en klass i det här fallet för att kunna ge den här deklarationen hög nog specificitet för att inte bli överskriden av den vanliga aside deklarationen ovan.*/
 	grid-area: aside-2;
 }
@@ -213,30 +234,29 @@ aside { /*Väljer elementet aside*/
 	transform: scaleX(-1); /*Transform används för att transformera bilder på olika sätt, i det här fallet så vill vi ändra på bildens x-skala. Detta gör vi med hjälp av scaleX() metoden. Vi kommer alltså ändra på storleken på bilden vågrätt, 1 är vanligt, om man ökar skalan så kommer bilden att bli bredare, om man går ner till 0 så kommer bilden inte vara synlig och om man sedan går ner till negativa värden så kommer bilden att vara spegelvänd vilket är det som vi är ute efter, så vi sätter värdet till -1 för att göra så att bliden har vanlig storlek men är spegelvänd.*/
 }
 
-.overlay-container {
-	position: relative;
+.overlay-container { /*Detta är den container som innehåller bilden samt texten som ska vara över bilden.*/
+	display: grid; /*Jag väljer att visa overlay-container som ett grid för att kunna positionera texten över bilden, detta är ett alternativ till att använda absolut positionering.*/
 }
 
-aside img {
-	display: block;
-	max-width: 400px;
+.overlay-container img,
+.overlay { /*Jag väljer med en gruppselektor bilden inuti overlay-containern samt som självaste overlay texten.*/
+	grid-area: 1/2 /*Jag ger bilden och texten samma grid area, detta kommer göra så att de visas på samma ställe över varandra och då behöver man bara justera så att texten är på rätt ställe över bilden.*/
 }
 
-.overlay {
-	position: absolute;
-	bottom: 0;
-	background: rgba(0, 0, 0, 0.5);
-	width: 400px;
-	transition: .5s ease;
-	opacity: 0;
+.overlay { /*Lägger till regler till overlayen som texten är i.*/
+	align-self: end; /*Detta kommer göra så att texten justeras till slutet av grid rutan, alltså så kommer texten att visas i botten av bilden vilket är det vi är ute efter.*/
+	background: rgba(0, 0, 0, 0.5); /*Vi gör bakgrundsfärgen till svart med 0.5 opacitet med rgba(red green blue alpha) funktionen. De första tre värdena fungerar precis som vanliga rgb funtionen med det fjärde är värdet för alpha som bestämmer opaciteten på färgen.*/
 	color: #d3af86;
-	padding: 15px 0px 15px 0px;
-	font-size: 20px;
+	transition: 0.5s; /*Transition gör så att man kan ändra värden samt visa elemnt mjukt, i detta fallet så används det för att göra så att texten kommer att gå från 0 opacitet till 1 opacitet under 0.5 sekunder vilket är det givna värdet med enheten "s" som står för sekunder.*/
+	opacity: 0; /*Sätter opaciteten till 0 så att elementet inte syns vanligtvis, senare så kommer vi lägga till så att elementet visas när man hovrar över bilden.*/
 	text-align: center;
+	font-size: 20px;
+	width: 400px;
+	padding: 15px 0px 15px 0px; /*Lägger till padding till top och bottum med samma metod som jag lägger till margin åt olika håll genom att skriva in fyra värden. Jag lägger endast till padding uppåt och neråt eftersom att det inte behövs åt sidorna eftersom att texten befinner sig i mitten av sin div så det finns tillräckligt mellanrum.*/
 }
 
-.overlay-container:hover .overlay {
-	opacity: 1;
+.overlay-container:hover .overlay { /*Väljer overlayen medans overlay-container hovras över av användaren.*/
+	opacity: 1; /*Ändrar opaciteten till 1 så att elementet blir synligt.*/
 }
 
 footer { /*Ger footer rätt placering i griden*/
