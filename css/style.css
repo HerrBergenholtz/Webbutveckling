@@ -52,8 +52,16 @@ nav a:visited { /*Här använder jag mig återigen av en avkomlingsselektor för
 	color: #468e3f; /*Ändrar färger på texten till en lite ljusare så att användaren ser att de har besökt den länken.*/
 }
 
-nav a[href^="https"]:visited { /*Här använder jag mig av en avkomlingsselektor och attributselektor som förut fast jag har också lagt till pseudoklassselektorn för att välja de externa länkarna när de har blivit besökta.*/
-	color: #8951c2; /*Ändrar färgen på texten till lite ljusare så som jag gjorde med de andra länkarna också.*/
+nav a:active {
+	color: rebeccapurple;
+}
+
+nav a[href^="https"]:visited { /*Här använder jag mig av en avkomlingsselektor och attributselektor som förut fast jag har också lagt till pseudoklassselektorn för att välja de externa länkarna när de har blivit besökta. */
+	color: #9058c9; /*Ändrar färgen på texten till lite ljusare så som jag gjorde med de andra länkarna också.*/
+}
+
+nav a[href^="https"]:active {
+	color: #367031;
 }
 
 nav ul { /*Väljer den oordnade listan inuti min nav*/
@@ -123,15 +131,15 @@ main { /*Ger main grid-template-arean av main så att den visas på rätt ställ
 .main-container { /*Ger main-containern en grid layout*/
 	display: grid;
 	grid-template-columns: auto; 
-	grid-template-rows: auto; /*När vi använder oss av sections i HTLM dokumentet så behöver vi inte deklarera templates med värden utan det räcker att skriva "auto" och så kommer det att skapas en lämplig grid layout med en sektion i varje ruta.*/
+	grid-template-rows: auto; /*När vi använder oss av sections i HTML dokumentet så behöver vi inte deklarera templates med värden utan det räcker att skriva "auto" och så kommer det att skapas en lämplig grid layout med en sektion i varje ruta.*/
 	grid-gap: 30px;
 	padding: 20px;
 }
 
-caption {
+caption { /*Tabellens egna titel*/
 	padding: 10px;
 	font-size: 24px;
-	font-family: Arial, Helvetica, sans-serif /*Ändrar typsnittet på min caption*/
+	font-family: Arial/*Ändrar typsnittet på min caption*/
 }
 
 table,
@@ -142,7 +150,7 @@ td { /*Med en gruppselektor (en gruppselektor gör så att man kan välja flera 
 }
 
 table { 
-	border-collapse: collapse; /*Eftersom att vi har gett alla celler samt listan egna borders så kommer det att finnas border som ligger jämte varandra så jag gör så att alla borders som är jämte varandra slås samman till en så att det inte ligger flera border jämte varandra.*/
+	border-collapse: collapse; /*Eftersom att jag har gett alla celler samt listan egna borders så kommer det att finnas border som ligger jämte varandra så jag gör så att alla borders som är jämte varandra slås samman till en genom att deklarera denna regel så att det inte ligger flera border jämte varandra.*/
 }
 
 th,
@@ -154,7 +162,7 @@ th:nth-child(1) { /*Med en strukturell pseudoklas gör jag så att det första t
 	text-align: left;
 }
 
-th:nth-child(3) { /*Deklarerar att det sista th elementet kommer att texten justerad till höger.*/
+th:nth-child(4) { /*Deklarerar att det sista th elementet kommer att texten justerad till höger.*/
 	text-align: right;
 }
 
@@ -193,9 +201,10 @@ h2,
 h3,
 h4 { /*Denna långa gruppselektor väljer alla h element som jag använder mig av i mina sidor och ger dem en egen färg och textstorlek.*/
 	color: #babfe5;
+	font-family: Arial;
 }
 
-.container-fin-sida h1 { 
+.container-fin-sida h1 { /*Väljer den första headingen i fin-sida-html*/
 	text-align: center;
 	font-size: 30px;
 }
@@ -213,7 +222,7 @@ main section:nth-child(2) { /*Ändrar textfärg och storlek på den andra sektio
 	padding: 10px;
 }
 
-aside { /*Väljer elementet aside*/
+.container aside { /*Väljer elementet aside inuti .container, detta gör jag för att jag inte vill att aside på fin-sida.html ska påverkas av ändrignarna eftersom att det bara är i index.html där jag använder mig av ändringarna*/
 	grid-area: aside; /*Ger den sin plats inom container-grid-systemet*/
 	display: grid; /*Visar aside som ett grid system*/
 	grid-template-rows: min-content; /*Gör så att raderna kommer vara så små som möjligt (beroende på storleken av innehållet)*/
@@ -226,12 +235,12 @@ aside img { /*Ger de bilder som finns inuti aside en storlek.*/
 	max-width: 400px;
 }
 
-.aside-2 { /*Detta väljer min andra aside som jag använder i fin-sida.html och ger den rätt grid-area. Man behöver använda sig av en klass i det här fallet för att kunna ge den här deklarationen hög nog specificitet för att inte bli överskriden av den vanliga aside deklarationen ovan.*/
+.aside-2 { /*Detta väljer min andra aside som jag använder i fin-sida.html och ger den rätt grid-area.*/
 	grid-area: aside-2;
 }
 
-.aside-2 img { /*Bilder i aside-2*/
-	transform: scaleX(-1); /*Transform används för att transformera bilder på olika sätt, i det här fallet så vill vi ändra på bildens x-skala. Detta gör vi med hjälp av scaleX() metoden. Vi kommer alltså ändra på storleken på bilden vågrätt, 1 är vanligt, om man ökar skalan så kommer bilden att bli bredare, om man går ner till 0 så kommer bilden inte vara synlig och om man sedan går ner till negativa värden så kommer bilden att vara spegelvänd vilket är det som vi är ute efter, så vi sätter värdet till -1 för att göra så att bliden har vanlig storlek men är spegelvänd.*/
+.aside-2 { /*Bilder i aside-2*/
+	transform: scaleX(-1); /*Transform används för att transformera element på olika sätt, i det här fallet så vill vi ändra på bildens x-skala. Detta gör vi med hjälp av scaleX() metoden. Vi kommer alltså ändra på storleken på bilden vågrätt, 1 är vanligt, om man ökar skalan så kommer bilden att bli bredare, om man går ner till 0 så kommer bilden inte vara synlig och om man sedan går ner till negativa värden så kommer bilden att vara spegelvänd vilket är det som vi är ute efter, så vi sätter värdet till -1 för att göra så att bliden har vanlig storlek men är spegelvänd.*/
 }
 
 .overlay-container { /*Detta är den container som innehåller bilden samt texten som ska vara över bilden.*/
@@ -240,7 +249,7 @@ aside img { /*Ger de bilder som finns inuti aside en storlek.*/
 
 .overlay-container img,
 .overlay { /*Jag väljer med en gruppselektor bilden inuti overlay-containern samt som självaste overlay texten.*/
-	grid-area: 1/2 /*Jag ger bilden och texten samma grid area, detta kommer göra så att de visas på samma ställe över varandra och då behöver man bara justera så att texten är på rätt ställe över bilden.*/
+	grid-area: 1/2 /*Jag ger bilden och texten samma grid area, detta kommer göra så att de visas på samma ställe och då behöver man bara justera så att texten är på rätt ställe över bilden.*/
 }
 
 .overlay { /*Lägger till regler till overlayen som texten är i.*/
@@ -252,15 +261,17 @@ aside img { /*Ger de bilder som finns inuti aside en storlek.*/
 	text-align: center;
 	font-size: 20px;
 	width: 400px;
-	padding: 15px 0px 15px 0px; /*Lägger till padding till top och bottum med samma metod som jag lägger till margin åt olika håll genom att skriva in fyra värden. Jag lägger endast till padding uppåt och neråt eftersom att det inte behövs åt sidorna eftersom att texten befinner sig i mitten av sin div så det finns tillräckligt mellanrum.*/
+	padding-top: 15px;
+	padding-bottom: 15px; /*Lägger till padding till top och bottum. Jag lägger endast till padding uppåt och neråt eftersom att det inte behövs åt sidorna eftersom att texten befinner sig i mitten av sin div så det finns tillräckligt mellanrum.*/
 }
 
 .overlay-container:hover .overlay { /*Väljer overlayen medans overlay-container hovras över av användaren.*/
 	opacity: 1; /*Ändrar opaciteten till 1 så att elementet blir synligt.*/
 }
 
-footer { /*Ger footer rätt placering i griden*/
+footer { /*Ger footer rätt placering i griden och samma margin som main*/
 	grid-area: footer;
+	margin: 20px;
 }
 
 h4 { /*Ger rubriken i footern en mindre storlek*/
