@@ -52,7 +52,7 @@ nav a:visited { /*Här använder jag mig återigen av en avkomlingsselektor för
 	color: #468e3f; /*Ändrar färger på texten till en lite ljusare så att användaren ser att de har besökt den länken.*/
 }
 
-nav a:active {
+nav a:active { /*Ändrar färgen på på anchor elementen i nav nör de aktiveras, alltså när användaren klickar på dem.*/
 	color: rebeccapurple;
 }
 
@@ -60,7 +60,7 @@ nav a[href^="https"]:visited { /*Här använder jag mig av en avkomlingsselektor
 	color: #9058c9; /*Ändrar färgen på texten till lite ljusare så som jag gjorde med de andra länkarna också.*/
 }
 
-nav a[href^="https"]:active {
+nav a[href^="https"]:active { /*Ändrar färgen på alla externa länkar till en annan färg när den är aktiv. Alltså stunden användaren klickar på den.*/
 	color: #367031;
 }
 
