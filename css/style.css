@@ -235,11 +235,11 @@ aside img { /*Ger de bilder som finns inuti aside en storlek.*/
 	max-width: 400px;
 }
 
-.aside-2 { /*Detta väljer min andra aside som jag använder i fin-sida.html och ger den rätt grid-area.*/
+aside:nth-child(4) { /*Detta väljer min andra aside som jag använder i fin-sida.html och ger den rätt grid-area.*/
 	grid-area: aside-2;
 }
 
-.aside-2 { /*Bilder i aside-2*/
+aside:nth-child(4) img{ /*Bilden i min andra aside*/
 	transform: scaleX(-1); /*Transform används för att transformera element på olika sätt, i det här fallet så vill vi ändra på bildens x-skala. Detta gör vi med hjälp av scaleX() metoden. Vi kommer alltså ändra på storleken på bilden vågrätt, 1 är vanligt, om man ökar skalan så kommer bilden att bli bredare, om man går ner till 0 så kommer bilden inte vara synlig och om man sedan går ner till negativa värden så kommer bilden att vara spegelvänd vilket är det som vi är ute efter, så vi sätter värdet till -1 för att göra så att bliden har vanlig storlek men är spegelvänd.*/
 }
 
