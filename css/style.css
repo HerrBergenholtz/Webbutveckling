@@ -1,9 +1,6 @@
 body { /*Vi använder oss av en typselektor för att välja body vilkte kommer att påverka allt som användaren ser eftersom att allt ligger inut body*/
 	background-color: #221a0f; /*Ändrar bakgrundsfärgen till mörkbrun*/
 	color: #d3af86; /*Bestämmer färgen på all text på sidan*/
-}
-
-.container { /*Detta är en klasselektor som väljer "container", vilket är den div som omsluter allt inuti body. Detta finns till för att lägga till ett grid till bodyn.*/
 	display: grid; /*Deklarerar display till grid. Grid är ett rutnätssystem som är uppbyggt av rader och kolumner där rader är horisontella och kolumner är vertikala.*/
 	grid-template-columns: 2fr 1fr; /*Detta deklarerar hur stora och hur många kolumner man vill ha, jag använder mig av enheten fr (fractions), det är en relativ måttenhet så skillnaden i storlek mellan kolumnerna kommer vara samma oberoende av skärmstorlek. I detta fallet så har jag två kolumner där den första är dubbelt så stor som den andra.*/
 	grid-template-rows: 1fr 8fr 1fr; /*Deklarerar hur många och hur stora raderna ska vara på samma sätt som kolumner deklareras.*/
@@ -13,6 +10,9 @@ body { /*Vi använder oss av en typselektor för att välja body vilkte kommer a
 	"footer footer"; /*Till sist så deklarer jag att footer ska ta upp hela den sista raden.*/
 	grid-gap: 10px; /*Dett gör så att det är ett 10 pixlars mellanrum mellan alla grid-items med enheten px (som står för pixlar).*/
 	height: 97vh; /*Sätter höjden på container och därför hela sidan till 97vh, vilket är en relativ enhet som står för view-height, det kommer göra så att sidan alltid kommer ta upp nästintill hela skärmen (100vh är hela skärmen) detta gör jag för att jag vill att min footer ska vara längst ner på sidan oavsett skärmstorlek.*/
+}
+
+.container { /*Detta är en klasselektor som väljer "container", vilket är den div som omsluter allt inuti body. Detta finns till för att lägga till ett grid till bodyn.*/
 }
 
 .container-fin-sida { /*Detta deklarationsblock ser ungefär likadant ut som det vanliga container blocket fast detta har en annorlunda layout som jag använder i fin-sida.html.*/
