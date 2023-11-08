@@ -1,283 +1,390 @@
-body { /*Vi använder oss av en typselektor för att välja body vilkte kommer att påverka allt som användaren ser eftersom att allt ligger inut body*/
-	background-color: #221a0f; /*Ändrar bakgrundsfärgen till mörkbrun*/
-	color: #d3af86; /*Bestämmer färgen på all text på sidan*/
-	display: grid; /*Deklarerar display till grid. Grid är ett rutnätssystem som är uppbyggt av rader och kolumner där rader är horisontella och kolumner är vertikala.*/
-	grid-template-columns: 2fr 1fr; /*Detta deklarerar hur stora och hur många kolumner man vill ha, jag använder mig av enheten fr (fractions), det är en relativ måttenhet så skillnaden i storlek mellan kolumnerna kommer vara samma oberoende av skärmstorlek. I detta fallet så har jag två kolumner där den första är dubbelt så stor som den andra.*/
-	grid-template-rows: 1fr 8fr 1fr; /*Deklarerar hur många och hur stora raderna ska vara på samma sätt som kolumner deklareras.*/
-	grid-template-areas: /*Detta är ett simpelt sätt att göra så att rätt element hamnar på rätt ställe i sin grid, för att deklarera den första raden så skriver man, inom citationstecken, ett namn och sedan ett mellanrum (detta deklarerar den första kolumnen i raden) och sedan ett till namn för nästa kolumnn i raden och så vidare. När man ska deklarera nästa rad så avslutar man citationstecknen och hoppar ner en rad och gör samma sak.*/
-	"header header" /*Den första raden vill jag att headern helt ska ta upp så jag skriver header två gånger så att den tar upp hela raden*/ 
-	"main aside" /*I den andra raden så vill jag att main och aside ska vara jämte varandra.*/
-	"footer footer"; /*Till sist så deklarer jag att footer ska ta upp hela den sista raden.*/
-	grid-gap: 10px; /*Dett gör så att det är ett 10 pixlars mellanrum mellan alla grid-items med enheten px (som står för pixlar).*/
-	height: 97vh; /*Sätter höjden på container och därför hela sidan till 97vh, vilket är en relativ enhet som står för view-height, det kommer göra så att sidan alltid kommer ta upp nästintill hela skärmen (100vh är hela skärmen) detta gör jag för att jag vill att min footer ska vara längst ner på sidan oavsett skärmstorlek.*/
+body {
+	/*Vi använder oss av en typselektor för att välja body vilkte kommer att påverka allt som användaren ser eftersom att allt ligger inut body*/
+	background-color: #221a0f;
+	/*Ändrar bakgrundsfärgen till mörkbrun*/
+	color: #d3af86;
+	/*Bestämmer färgen på all text på sidan*/
 }
 
-.container { /*Detta är en klasselektor som väljer "container", vilket är den div som omsluter allt inuti body. Detta finns till för att lägga till ett grid till bodyn.*/
+.container {
+	/*Detta är en klasselektor som väljer "container", vilket är den div som omsluter allt inuti body. Detta finns till för att lägga till ett grid till bodyn.*/
+	display: grid;
+	/*Deklarerar display till grid. Grid är ett rutnätssystem som är uppbyggt av rader och kolumner där rader är horisontella och kolumner är vertikala.*/
+	grid-template-columns: 2fr 1fr;
+	/*Detta deklarerar hur stora och hur många kolumner man vill ha, jag använder mig av enheten fr (fractions), det är en relativ måttenhet så skillnaden i storlek mellan kolumnerna kommer vara samma oberoende av skärmstorlek. I detta fallet så har jag två kolumner där den första är dubbelt så stor som den andra.*/
+	grid-template-rows: 1fr 8fr 1fr;
+	/*Deklarerar hur många och hur stora raderna ska vara på samma sätt som kolumner deklareras.*/
+	grid-template-areas:
+		/*Detta är ett simpelt sätt att göra så att rätt element hamnar på rätt ställe i sin grid, för att deklarera den första raden så skriver man, inom citationstecken, ett namn och sedan ett mellanrum (detta deklarerar den första kolumnen i raden) och sedan ett till namn för nästa kolumnn i raden och så vidare. När man ska deklarera nästa rad så avslutar man citationstecknen och hoppar ner en rad och gör samma sak.*/
+		"header header"
+		/*Den första raden vill jag att headern helt ska ta upp så jag skriver header två gånger så att den tar upp hela raden*/
+		"main aside"
+		/*I den andra raden så vill jag att main och aside ska vara jämte varandra.*/
+		"footer footer";
+	/*Till sist så deklarer jag att footer ska ta upp hela den sista raden.*/
+	grid-gap: 10px;
+	/*Dett gör så att det är ett 10 pixlars mellanrum mellan alla grid-items med enheten px (som står för pixlar).*/
+	height: 97vh;
+	/*Sätter höjden på container och därför hela sidan till 97vh, vilket är en relativ enhet som står för view-height, det kommer göra så att sidan alltid kommer ta upp nästintill hela skärmen (100vh är hela skärmen) detta gör jag för att jag vill att min footer ska vara längst ner på sidan oavsett skärmstorlek.*/
 }
 
-.container-fin-sida { /*Detta deklarationsblock ser ungefär likadant ut som det vanliga container blocket fast detta har en annorlunda layout som jag använder i fin-sida.html.*/
+.container-fin-sida {
+	/*Detta deklarationsblock ser ungefär likadant ut som det vanliga container blocket fast detta har en annorlunda layout som jag använder i fin-sida.html.*/
 	display: grid;
 	grid-template-columns: 1fr 2fr 1fr;
 	grid-template-rows: 1fr 8fr 1fr;
-	grid-template-areas: 
-	"header header header"
-	"aside main aside-2" /*Den enda skillnaden är att jag har en till kolumn med en till aside som jag har gett namnet aside-2 så att jag ska kunna placera den i mitt grid korrekt.*/
-	"footer footer footer";
+	grid-template-areas:
+		"header header header"
+		"aside main aside-2"
+		/*Den enda skillnaden är att jag har en till kolumn med en till aside som jag har gett namnet aside-2 så att jag ska kunna placera den i mitt grid korrekt.*/
+		"footer footer footer";
 	height: 97vh;
 	grid-gap: 10px;
 }
 
-header { /*En typselektor som väljer min header.*/
-	grid-area: header; /*Detta gör så att min header kommer placeras in i grid-arean för header, man deklarerar alltså det element som man vill sätta in i ett grid med det grid-area och sedan namnet som man använder sig av i grid-template-areas i containern.*/
-	margin: -8px; /*Tar bort all margin runt headern så att den är i toppen av skärmen utan något mellanrum ovanför eller vid sidan. Margin är det mellanrum som är utanför elementet som omsluter det.*/
-	background-color: #473624; /*Ger header en annan bakgrundsfärg så att det ska bli tydligare att det är headern.*/
-	height: 80px; /*Ger den en lämplig höjd*/
+header {
+	/*En typselektor som väljer min header.*/
+	grid-area: header;
+	/*Detta gör så att min header kommer placeras in i grid-arean för header, man deklarerar alltså det element som man vill sätta in i ett grid med det grid-area och sedan namnet som man använder sig av i grid-template-areas i containern.*/
+	margin: -8px;
+	/*Tar bort all margin runt headern så att den är i toppen av skärmen utan något mellanrum ovanför eller vid sidan. Margin är det mellanrum som är utanför elementet som omsluter det.*/
+	background-color: #473624;
+	/*Ger header en annan bakgrundsfärg så att det ska bli tydligare att det är headern.*/
+	height: 80px;
+	/*Ger den en lämplig höjd*/
 }
 
-header img { /*Detta är en avkomlingsselektor, i detta fallet så väljer alla bilder som är barn eller barn barn (osv) av header*/
-	width: 60px; /*Sätter den maximala bredden på bilden*/
-	margin-top: -20px; /*Tar bort margin på övre sidan av bilden för att ge den en mer lämplig position i header. Man kan välja att lägga till eller ta bort margin över, under, och åt vänster och höger med respektive, margin-top/bottum/left/right.*/
+header img {
+	/*Detta är en avkomlingsselektor, i detta fallet så väljer alla bilder som är barn eller barn barn (osv) av header*/
+	width: 60px;
+	/*Sätter den maximala bredden på bilden*/
+	margin-top: -20px;
+	/*Tar bort margin på övre sidan av bilden för att ge den en mer lämplig position i header. Man kan välja att lägga till eller ta bort margin över, under, och åt vänster och höger med respektive, margin-top/bottum/left/right.*/
 }
 
-nav { /*Väljer min nav med en typselektor*/
-	color: #367031; /*Ger den en annorlunda textfärg*/
-	font-size: 18px; /*Ändrar på storleken på texten inom nav.*/
+nav {
+	/*Väljer min nav med en typselektor*/
+	color: #367031;
+	/*Ger den en annorlunda textfärg*/
+	font-size: 18px;
+	/*Ändrar på storleken på texten inom nav.*/
 }
 
-nav a[href^="https"] { /*Här använder jag mig av en avkomlingsselektor för att välja alla anchor element inuti nav och sedan en attributselektor för att välja alla anchor tags som har en href som börjar på https. Detta kommer alltså välja alla anchor tags inom nav som leder till en extern sida.*/
-	color: rebeccapurple; /*Jag ändrar färgen på de externa länkarna så att man kan se skillnad på dem.*/
+nav a[href^="https"] {
+	/*Här använder jag mig av en avkomlingsselektor för att välja alla anchor element inuti nav och sedan en attributselektor för att välja alla anchor tags som har en href som börjar på https. Detta kommer alltså välja alla anchor tags inom nav som leder till en extern sida.*/
+	color: rebeccapurple;
+	/*Jag ändrar färgen på de externa länkarna så att man kan se skillnad på dem.*/
 }
 
-nav a:visited { /*Här använder jag mig återigen av en avkomlingsselektor för att välja alla anchor element inuti nav fast endast när de har blivit besökta, detta gör jag genom att använda mig av en pseudoklass*/
-	color: #468e3f; /*Ändrar färger på texten till en lite ljusare så att användaren ser att de har besökt den länken.*/
+nav a:visited {
+	/*Här använder jag mig återigen av en avkomlingsselektor för att välja alla anchor element inuti nav fast endast när de har blivit besökta, detta gör jag genom att använda mig av en pseudoklass*/
+	color: #468e3f;
+	/*Ändrar färger på texten till en lite ljusare så att användaren ser att de har besökt den länken.*/
 }
 
-nav a:active { /*Ändrar färgen på på anchor elementen i nav nör de aktiveras, alltså när användaren klickar på dem.*/
+nav a:active {
+	/*Ändrar färgen på på anchor elementen i nav nör de aktiveras, alltså när användaren klickar på dem.*/
 	color: rebeccapurple;
 }
 
-nav a[href^="https"]:visited { /*Här använder jag mig av en avkomlingsselektor och attributselektor som förut fast jag har också lagt till pseudoklassselektorn för att välja de externa länkarna när de har blivit besökta. */
-	color: #9058c9; /*Ändrar färgen på texten till lite ljusare så som jag gjorde med de andra länkarna också.*/
+nav a[href^="https"]:visited {
+	/*Här använder jag mig av en avkomlingsselektor och attributselektor som förut fast jag har också lagt till pseudoklassselektorn för att välja de externa länkarna när de har blivit besökta. */
+	color: #9058c9;
+	/*Ändrar färgen på texten till lite ljusare så som jag gjorde med de andra länkarna också.*/
 }
 
-nav a[href^="https"]:active { /*Ändrar färgen på alla externa länkar till en annan färg när den är aktiv. Alltså stunden användaren klickar på den.*/
+nav a[href^="https"]:active {
+	/*Ändrar färgen på alla externa länkar till en annan färg när den är aktiv. Alltså stunden användaren klickar på den.*/
 	color: #367031;
 }
 
-nav ul { /*Väljer den oordnade listan inuti min nav*/
-	display: grid; /*Gör så att oordnade listan visas som ett grid, detta för att undvika att använda floats och göra det på ett mer responsivt sätt.*/
-	grid-template-columns: 100px 250px 250px 250px; /*Deklarerar storlek och mängd kolumner fast i detta fallet så använder jag mig av px istället för fr. Man behöver inte deklarera grid-template-rows eftersom att det bara finns en rad.*/
-	padding-inline-start: 10px; /*Detta är padding som kommer finnas där listan börjar, alltså till vänster om listan.*/
+nav ul {
+	/*Väljer den oordnade listan inuti min nav*/
+	display: grid;
+	/*Gör så att oordnade listan visas som ett grid, detta för att undvika att använda floats och göra det på ett mer responsivt sätt.*/
+	grid-template-columns: 100px 250px 250px 250px;
+	/*Deklarerar storlek och mängd kolumner fast i detta fallet så använder jag mig av px istället för fr. Man behöver inte deklarera grid-template-rows eftersom att det bara finns en rad.*/
+	padding-inline-start: 10px;
+	/*Detta är padding som kommer finnas där listan börjar, alltså till vänster om listan.*/
 }
 
-nav ul li { /*Väljer alla li element inuti den oordnade listan inuti min nav*/
+nav ul li {
+	/*Väljer alla li element inuti den oordnade listan inuti min nav*/
 	margin-left: auto;
-	margin-right: auto; /*Jag deklarerar margin till vänster och höger till auto vilket gör så att alla list element kommer vara centrerade inuti sina grids, om jag skulle deklarera margin till auto åt alla håll så skulle det läggas till margin över och under vilket jag inte vill ha.*/
-	padding: 10px; /*Ger list elementen padding. Padding är inte som margin, istället för att det är utanför självaste elementet så är detta innaför elementet, vilket gör att man kan göra så att det är mer rymligt mellan element utan att flytta runt på elementen med margin, alla element håller sig i sin ruta.*/
-	list-style-type: none; /*Den här regeln ändrar list stilen till ingen, vanligtvis så har oordnade listor punkter framför varje list element men i detta fallet vill vi inte att de ska synas vilket är varför vi deklarerar denna regel.*/
+	margin-right: auto;
+	/*Jag deklarerar margin till vänster och höger till auto vilket gör så att alla list element kommer vara centrerade inuti sina grids, om jag skulle deklarera margin till auto åt alla håll så skulle det läggas till margin över och under vilket jag inte vill ha.*/
+	padding: 10px;
+	/*Ger list elementen padding. Padding är inte som margin, istället för att det är utanför självaste elementet så är detta innaför elementet, vilket gör att man kan göra så att det är mer rymligt mellan element utan att flytta runt på elementen med margin, alla element håller sig i sin ruta.*/
+	list-style-type: none;
+	/*Den här regeln ändrar list stilen till ingen, vanligtvis så har oordnade listor punkter framför varje list element men i detta fallet vill vi inte att de ska synas vilket är varför vi deklarerar denna regel.*/
 }
 
-nav ul li a { /*Väljer alla anchor element inuti list elementen inuti den oordnade listan inuti naven.*/
+nav ul li a {
+	/*Väljer alla anchor element inuti list elementen inuti den oordnade listan inuti naven.*/
 	padding: 14px;
 	color: #367031;
-	text-decoration: none; /*Tar bort all dekoration på texten, detta gör att länkarna inte kommer att vara understrukna som de vanligtvis är.*/
+	text-decoration: none;
+	/*Tar bort all dekoration på texten, detta gör att länkarna inte kommer att vara understrukna som de vanligtvis är.*/
 }
 
-nav ul li:hover .dropdown-meny { /*Detta är en pseudoklass som endast väljer elementet när det hovras över, och sedan, i detta fallet, väljer dropdown-menyn*/
-	display: block; /*När någon hovrar över list elementet som har dropdown-menyn som barn så kommer dropdown-menyn visas som block istället för none. Block betyder att elementet kommer att visas på en ny rad och kommer att ta upp all tillgänglig plats.*/
+nav ul li:hover .dropdown-meny {
+	/*Detta är en pseudoklass som endast väljer elementet när det hovras över, och sedan, i detta fallet, väljer dropdown-menyn*/
+	display: block;
+	/*När någon hovrar över list elementet som har dropdown-menyn som barn så kommer dropdown-menyn visas som block istället för none. Block betyder att elementet kommer att visas på en ny rad och kommer att ta upp all tillgänglig plats.*/
 }
 
-.dropdown-meny { /*En klassselektor som väljer en klass som jag har givit min oordnade lista inuti ett listelement inuti min oordnade lista inuti min nav, jag har valt att ge den en klass för att göra det lättare att läsa och skriva eftersom att man annars måste ha väldigt långa avkmlingsselektorer.*/
+.dropdown-meny {
+	/*En klassselektor som väljer en klass som jag har givit min oordnade lista inuti ett listelement inuti min oordnade lista inuti min nav, jag har valt att ge den en klass för att göra det lättare att läsa och skriva eftersom att man annars måste ha väldigt långa avkmlingsselektorer.*/
 	margin-top: 20px;
 	margin-left: -40px;
-	display: none; /*Deklarerar att dropdown-menyn inte kommer att visas.*/
-	position: absolute; /*Absolut positionering används för att menyn ska visas relativt till förälder elementet vilket i detta fallet är list elementet som har den oordnade listan som är dropdown meny som barn, det används också för att göra så att listan inte tar plats på självaste bodyn utan finns ovanpå bodyn.*/
+	display: none;
+	/*Deklarerar att dropdown-menyn inte kommer att visas.*/
+	position: absolute;
+	/*Absolut positionering används för att menyn ska visas relativt till förälder elementet vilket i detta fallet är list elementet som har den oordnade listan som är dropdown meny som barn, det används också för att göra så att listan inte tar plats på självaste bodyn utan finns ovanpå bodyn.*/
 	background-color: bisque;
 	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px; /*Border radius är den radie som alla hörn på bordern har som jag anger med pixlar.*/
-	width: 200px; /*Bestämmer bredden på menyn*/
+	border-bottom-right-radius: 15px;
+	/*Border radius är den radie som alla hörn på bordern har som jag anger med pixlar.*/
+	width: 200px;
+	/*Bestämmer bredden på menyn*/
 }
 
-.dropdown-meny li { /*List elementen inuti menyn*/
+.dropdown-meny li {
+	/*List elementen inuti menyn*/
 	margin-left: 16px;
-	text-align: center; /*Gör så att texten blir centrerad.*/
+	text-align: center;
+	/*Gör så att texten blir centrerad.*/
 	width: 140px;
 }
 
-.dropdown-meny li a { /*Anchor elementen inuti listelementen inuti dropdown-menyn*/
+.dropdown-meny li a {
+	/*Anchor elementen inuti listelementen inuti dropdown-menyn*/
 	background-color: bisque;
-	font-size: 1.3rem; /*Denna reglen sätter textextstorleken till 1.3rem, rem är en relativ enhet som förhåller säg till rot elementet, i det här fallet så vill jag att texten ska vara lite större än i rot elementet. */
+	font-size: 1.3rem;
+	/*Denna reglen sätter textextstorleken till 1.3rem, rem är en relativ enhet som förhåller säg till rot elementet, i det här fallet så vill jag att texten ska vara lite större än i rot elementet. */
 	padding: 20px;
-	display: block; /*Display block gör så att varje anchor kommer visas på en ny rad och ta upp så stort område som det kan, i detta fallet så kommer den att flylla listelementet med anchor taggen.*/
+	display: block;
+	/*Display block gör så att varje anchor kommer visas på en ny rad och ta upp så stort område som det kan, i detta fallet så kommer den att flylla listelementet med anchor taggen.*/
 }
 
-.dropdown-meny li:last-child { /*Detta är en strukturell psuedoklass, den kommer att välja det li element som är det sista barnet inom dropdown meny. I det här fallet så använder jag det för att göra så att det sista list elementet inte har någon padding under sig.*/
+.dropdown-meny li:last-child {
+	/*Detta är en strukturell psuedoklass, den kommer att välja det li element som är det sista barnet inom dropdown meny. I det här fallet så använder jag det för att göra så att det sista list elementet inte har någon padding under sig.*/
 	padding-bottom: 0px;
 }
 
-.dropdown-meny li:first-child { /*Här gör jag så att det första listelementet inte har någon padding över sig.*/
+.dropdown-meny li:first-child {
+	/*Här gör jag så att det första listelementet inte har någon padding över sig.*/
 	padding-top: 0px;
 }
 
-.dropdown-meny li a:hover { /*Detta fungerar precis som den andra hover psuedoklassen som jag använde mig av fast i det här fallet så ändrar den bakgrundsfärgen på varje individuellt list element när de hovras över.*/
+.dropdown-meny li a:hover {
+	/*Detta fungerar precis som den andra hover psuedoklassen som jag använde mig av fast i det här fallet så ändrar den bakgrundsfärgen på varje individuellt list element när de hovras över.*/
 	background-color: #122311;
 }
 
-
-main { /*Ger main grid-template-arean av main så att den visas på rätt ställe i min grid layout.*/
+main {
+	/*Ger main-containern en grid layout*/
 	grid-area: main;
-}
-
-.main-container { /*Ger main-containern en grid layout*/
+	/*Ger main grid-template-arean av main så att den visas på rätt ställe i min grid layout.*/
 	display: grid;
-	grid-template-columns: auto; 
-	grid-template-rows: auto; /*När vi använder oss av sections i HTML dokumentet så behöver vi inte deklarera templates med värden utan det räcker att skriva "auto" och så kommer det att skapas en lämplig grid layout med en sektion i varje ruta.*/
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	/*När vi använder oss av sections i HTML dokumentet så behöver vi inte deklarera templates med värden utan det räcker att skriva "auto" och så kommer det att skapas en lämplig grid layout med en sektion i varje ruta.*/
 	grid-gap: 30px;
 	padding: 20px;
 }
 
-caption { /*Tabellens egna titel*/
+caption {
+	/*Tabellens egna titel*/
 	padding: 10px;
 	font-size: 24px;
-	font-family: Arial/*Ändrar typsnittet på min caption*/
+	font-family: Arial
+		/*Ändrar typsnittet på min caption*/
 }
 
 table,
 th,
-td { /*Med en gruppselektor (en gruppselektor gör så att man kan välja flera element som man vill ska ha samma regler genom att skriva ett komma "," mellan varje element som man vill inkludera) så väljer jag table, th och td, detta gör jag för att jag vill att hela listan ska ha en border runt sig och, sedan vill jag också att varje cell ska ha en egen border så då väljer jag td-cellerna samt th-cellerna.*/
-	border-width: 3px; /*Kommer göra så att bordern är 3px bred*/
-	border-style: solid; /*Stilen på min border, i detta fallet solid, vilket gör så att den blir ett rakt sträck*/
+td {
+	/*Med en gruppselektor (en gruppselektor gör så att man kan välja flera element som man vill ska ha samma regler genom att skriva ett komma "," mellan varje element som man vill inkludera) så väljer jag table, th och td, detta gör jag för att jag vill att hela listan ska ha en border runt sig och, sedan vill jag också att varje cell ska ha en egen border så då väljer jag td-cellerna samt th-cellerna.*/
+	border-width: 3px;
+	/*Kommer göra så att bordern är 3px bred*/
+	border-style: solid;
+	/*Stilen på min border, i detta fallet solid, vilket gör så att den blir ett rakt sträck*/
 }
 
-table { 
-	border-collapse: collapse; /*Eftersom att jag har gett alla celler samt listan egna borders så kommer det att finnas border som ligger jämte varandra så jag gör så att alla borders som är jämte varandra slås samman till en genom att deklarera denna regel så att det inte ligger flera border jämte varandra.*/
+table {
+	border-collapse: collapse;
+	/*Eftersom att jag har gett alla celler samt listan egna borders så kommer det att finnas border som ligger jämte varandra så jag gör så att alla borders som är jämte varandra slås samman till en genom att deklarera denna regel så att det inte ligger flera border jämte varandra.*/
 }
 
 th,
-td { /*Ger alla celler en padding*/
+td {
+	/*Ger alla celler en padding*/
 	padding: 15px;
 }
 
-th:nth-child(1) { /*Med en strukturell pseudoklas gör jag så att det första th elementet kommer kommer ha texten justerad till vänster.*/
+th:nth-child(1) {
+	/*Med en strukturell pseudoklas gör jag så att det första th elementet kommer kommer ha texten justerad till vänster.*/
 	text-align: left;
 }
 
-th:nth-child(4) { /*Deklarerar att det sista th elementet kommer att texten justerad till höger.*/
+th:nth-child(4) {
+	/*Deklarerar att det sista th elementet kommer att texten justerad till höger.*/
 	text-align: right;
 }
 
 td:nth-child(2),
-td:nth-child(3) { /*Här använder jag två struktuella pseudoklasser med en gruppselektor för att välja de två kolumnerna av td element som befinner sig i mitten av listan (nth:child(2 & 3)) och centrerar deras text*/
+td:nth-child(3) {
+	/*Här använder jag två struktuella pseudoklasser med en gruppselektor för att välja de två kolumnerna av td element som befinner sig i mitten av listan (nth:child(2 & 3)) och centrerar deras text*/
 	text-align: center;
 }
 
-td:nth-child(4) { /*Gör så att den fjärde kolumnen av td element får deras text justerad åt höger.*/
+td:nth-child(4) {
+	/*Gör så att den fjärde kolumnen av td element får deras text justerad åt höger.*/
 	text-align: right;
 }
 
-tr:nth-child(even) { /*Detta är en strukturell psuedoklass som de föregående fast i detta fallet så väljer de alla jämna element och ändrar bakgrundsfärgen, detta används för att göra så kallad zebra-striping på en tabell (att varannan rad har olika färg)*/
+tr:nth-child(even) {
+	/*Detta är en strukturell psuedoklass som de föregående fast i detta fallet så väljer de alla jämna element och ändrar bakgrundsfärgen, detta används för att göra så kallad zebra-striping på en tabell (att varannan rad har olika färg)*/
 	background-color: #2d2314;
 }
 
-tr:nth-child(odd) { /*Detta är som föregående deklaration fast de udda list raderna väljs och ger dem en annan färg.*/
+tr:nth-child(odd) {
+	/*Detta är som föregående deklaration fast de udda list raderna väljs och ger dem en annan färg.*/
 	background-color: #1a140c;
 }
 
-tr:hover { /*Ändrar bakgrundsfärg på hela raden när den hovras över.*/
+tr:hover {
+	/*Ändrar bakgrundsfärg på hela raden när den hovras över.*/
 	background-color: #362b1c;
 }
 
-td:hover, th:hover { /*Denna deklaration gör så att alla celler får en egen ny bakgrundsfärg när de individuellt hovras över.*/
+td:hover,
+th:hover {
+	/*Denna deklaration gör så att alla celler får en egen ny bakgrundsfärg när de individuellt hovras över.*/
 	background-color: #52432e;
 }
 
-main a { /*Gör så att alla länkar ser ut som vanlig text genom att göra så att de ärver text färg och tar bort text dekoration.*/
+main a {
+	/*Gör så att alla länkar ser ut som vanlig text genom att göra så att de ärver text färg och tar bort text dekoration.*/
 	text-decoration: none;
-	color: inherit; /*Gör så att anchor elementens text kommer att ärva textfärg från föräldraelementet vilket i detta fallet är p-elementet*/
+	color: inherit;
+	/*Gör så att anchor elementens text kommer att ärva textfärg från föräldraelementet vilket i detta fallet är p-elementet*/
 }
 
 h1,
 h2,
 h3,
-h4 { /*Denna långa gruppselektor väljer alla h element som jag använder mig av i mina sidor och ger dem en egen färg och textstorlek.*/
+h4 {
+	/*Denna långa gruppselektor väljer alla h element som jag använder mig av i mina sidor och ger dem en egen färg och textstorlek.*/
 	color: #babfe5;
 	font-family: Arial;
 }
 
-.container-fin-sida h1 { /*Väljer den första headingen i fin-sida-html*/
+.container-fin-sida h1 {
+	/*Väljer den första headingen i fin-sida-html*/
 	text-align: center;
 	font-size: 30px;
 }
 
-main section:nth-child(1) { /*Väljer den första sektionen inom main och ger den en border */
+main section:nth-child(1) {
+	/*Väljer den första sektionen inom main och ger den en border */
 	border-width: 3px;
-	border-style: solid; 
+	border-style: solid;
 	border-color: #d3af86;
 	padding: 20px;
 }
 
-main section:nth-child(2) { /*Ändrar textfärg och storlek på den andra sektionen*/
+main section:nth-child(2) {
+	/*Ändrar textfärg och storlek på den andra sektionen*/
 	color: #f79a32;
 	background-color: #473624;
 	padding: 10px;
 }
 
-.container aside { /*Väljer elementet aside inuti .container, detta gör jag för att jag inte vill att aside på fin-sida.html ska påverkas av ändrignarna eftersom att det bara är i index.html där jag använder mig av ändringarna*/
-	grid-area: aside; /*Ger den sin plats inom container-grid-systemet*/
-	display: grid; /*Visar aside som ett grid system*/
-	grid-template-rows: min-content; /*Gör så att raderna kommer vara så små som möjligt (beroende på storleken av innehållet)*/
+aside {
+	/*Väljer elementet aside inuti .container, detta gör jag för att jag inte vill att aside på fin-sida.html ska påverkas av ändrignarna eftersom att det bara är i index.html där jag använder mig av ändringarna*/
+	grid-area: aside;
+	/*Ger den sin plats inom container-grid-systemet*/
+	display: grid;
+	/*Visar aside som ett grid system*/
+	grid-template-rows: min-content;
+	/*Gör så att raderna kommer vara så små som möjligt (beroende på storleken av innehållet)*/
 	grid-gap: 70px;
 	margin: auto;
 	margin-top: 25px;
 }
 
-aside img { /*Ger de bilder som finns inuti aside en storlek.*/
+aside img {
+	/*Ger de bilder som finns inuti aside en storlek.*/
 	max-width: 400px;
 }
 
-aside:nth-child(4) { /*Detta väljer min andra aside som jag använder i fin-sida.html och ger den rätt grid-area.*/
+ol li {
+	margin: 20px;
+}
+
+aside:nth-child(4) {
+	/*Detta väljer min andra aside som jag använder i fin-sida.html och ger den rätt grid-area.*/
 	grid-area: aside-2;
 }
 
-aside:nth-child(4) img{ /*Bilden i min andra aside*/
-	transform: scaleX(-1); /*Transform används för att transformera element på olika sätt, i det här fallet så vill vi ändra på bildens x-skala. Detta gör vi med hjälp av scaleX() metoden. Vi kommer alltså ändra på storleken på bilden vågrätt, 1 är vanligt, om man ökar skalan så kommer bilden att bli bredare, om man går ner till 0 så kommer bilden inte vara synlig och om man sedan går ner till negativa värden så kommer bilden att vara spegelvänd vilket är det som vi är ute efter, så vi sätter värdet till -1 för att göra så att bliden har vanlig storlek men är spegelvänd.*/
+aside:nth-child(4) img {
+	/*Bilden i min andra aside*/
+	transform: scaleX(-1);
+	/*Transform används för att transformera element på olika sätt, i det här fallet så vill vi ändra på bildens x-skala. Detta gör vi med hjälp av scaleX() metoden. Vi kommer alltså ändra på storleken på bilden vågrätt, 1 är vanligt, om man ökar skalan så kommer bilden att bli bredare, om man går ner till 0 så kommer bilden inte vara synlig och om man sedan går ner till negativa värden så kommer bilden att vara spegelvänd vilket är det som vi är ute efter, så vi sätter värdet till -1 för att göra så att bliden har vanlig storlek men är spegelvänd.*/
 }
 
-.overlay-container { /*Detta är den container som innehåller bilden samt texten som ska vara över bilden.*/
-	display: grid; /*Jag väljer att visa overlay-container som ett grid för att kunna positionera texten över bilden, detta är ett alternativ till att använda absolut positionering.*/
+.overlay-container {
+	/*Detta är den container som innehåller bilden samt texten som ska vara över bilden.*/
+	display: grid;
+	/*Jag väljer att visa overlay-container som ett grid för att kunna positionera texten över bilden, detta är ett alternativ till att använda absolut positionering.*/
 }
 
 .overlay-container img,
-.overlay { /*Jag väljer med en gruppselektor bilden inuti overlay-containern samt som självaste overlay texten.*/
-	grid-area: 1/2 /*Jag ger bilden och texten samma grid area, detta kommer göra så att de visas på samma ställe och då behöver man bara justera så att texten är på rätt ställe över bilden.*/
+.overlay {
+	/*Jag väljer med en gruppselektor bilden inuti overlay-containern samt som självaste overlay texten.*/
+	grid-area: 1/2
+		/*Jag ger bilden och texten samma grid area, detta kommer göra så att de visas på samma ställe och då behöver man bara justera så att texten är på rätt ställe över bilden.*/
 }
 
-.overlay { /*Lägger till regler till overlayen som texten är i.*/
-	align-self: end; /*Detta kommer göra så att texten justeras till slutet av grid rutan, alltså så kommer texten att visas i botten av bilden vilket är det vi är ute efter.*/
-	background: rgba(0, 0, 0, 0.5); /*Vi gör bakgrundsfärgen till svart med 0.5 opacitet med rgba(red green blue alpha) funktionen. De första tre värdena fungerar precis som vanliga rgb funtionen med det fjärde är värdet för alpha som bestämmer opaciteten på färgen.*/
+.overlay {
+	/*Lägger till regler till overlayen som texten är i.*/
+	align-self: end;
+	/*Detta kommer göra så att texten justeras till slutet av grid rutan, alltså så kommer texten att visas i botten av bilden vilket är det vi är ute efter.*/
+	background: rgba(0, 0, 0, 0.5);
+	/*Vi gör bakgrundsfärgen till svart med 0.5 opacitet med rgba(red green blue alpha) funktionen. De första tre värdena fungerar precis som vanliga rgb funtionen med det fjärde är värdet för alpha som bestämmer opaciteten på färgen.*/
 	color: #d3af86;
-	transition: 0.5s; /*Transition gör så att man kan ändra värden samt visa elemnt mjukt, i detta fallet så används det för att göra så att texten kommer att gå från 0 opacitet till 1 opacitet under 0.5 sekunder vilket är det givna värdet med enheten "s" som står för sekunder.*/
-	opacity: 0; /*Sätter opaciteten till 0 så att elementet inte syns vanligtvis, senare så kommer vi lägga till så att elementet visas när man hovrar över bilden.*/
+	transition: 0.5s;
+	/*Transition gör så att man kan ändra värden samt visa elemnt mjukt, i detta fallet så används det för att göra så att texten kommer att gå från 0 opacitet till 1 opacitet under 0.5 sekunder vilket är det givna värdet med enheten "s" som står för sekunder.*/
+	opacity: 0;
+	/*Sätter opaciteten till 0 så att elementet inte syns vanligtvis, senare så kommer vi lägga till så att elementet visas när man hovrar över bilden.*/
 	text-align: center;
 	font-size: 20px;
 	width: 400px;
 	padding-top: 15px;
-	padding-bottom: 15px; /*Lägger till padding till top och bottum. Jag lägger endast till padding uppåt och neråt eftersom att det inte behövs åt sidorna eftersom att texten befinner sig i mitten av sin div så det finns tillräckligt mellanrum.*/
+	padding-bottom: 15px;
+	/*Lägger till padding till top och bottum. Jag lägger endast till padding uppåt och neråt eftersom att det inte behövs åt sidorna eftersom att texten befinner sig i mitten av sin div så det finns tillräckligt mellanrum.*/
 }
 
-.overlay-container:hover .overlay { /*Väljer overlayen medans overlay-container hovras över av användaren.*/
-	opacity: 1; /*Ändrar opaciteten till 1 så att elementet blir synligt.*/
+.overlay-container:hover .overlay {
+	/*Väljer overlayen medans overlay-container hovras över av användaren.*/
+	opacity: 1;
+	/*Ändrar opaciteten till 1 så att elementet blir synligt.*/
 }
 
-footer { /*Ger footer rätt placering i griden och samma margin som main*/
+footer {
+	/*Ger footer rätt placering i griden och samma margin som main*/
 	grid-area: footer;
 	margin: 20px;
 }
 
-h4 { /*Ger rubriken i footern en mindre storlek*/
+h4 {
+	/*Ger rubriken i footern en mindre storlek*/
 	font-size: 16px;
 }
 
-footer p { /*Ger texten i footer en mindre storlek*/
+footer p {
+	/*Ger texten i footer en mindre storlek*/
 	font-size: 12px;
 }
