@@ -379,12 +379,7 @@ footer {
 	margin: 20px;
 }
 
-h4 {
-	/*Ger rubriken i footern en mindre storlek*/
-	font-size: 16px;
-}
-
 footer p {
 	/*Ger texten i footer en mindre storlek*/
-	font-size: 12px;
+	font-size: 18px;
 }
